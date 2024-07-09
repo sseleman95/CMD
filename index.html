@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+
+  <title>CMD</title>
+
+  <link rel="shortcut icon" href="_static/icon.png" />
+  <link rel="stylesheet" href="_static/css/themes/vue.css" title="vue" />
+  <link rel="stylesheet" href="_static/css/themes/dark.css" title="dark" disabled />
+  <link rel="stylesheet" href="_static/css/themes/buble.css" title="buble" disabled />
+  <link rel="stylesheet" href="_static/css/themes/pure.css" title="pure" disabled />
+
+  <style>
+    nav.app-nav li ul {
+      min-width: 100px;
+    }
+
+    #carbonads {
+      box-shadow: none !important;
+      width: auto !important;
+    }
+
+    .sidebar li>p {
+      color: #505d6b;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!--inject-app-->
+  <div id="app">Loading ...</div>
+
+  <!--inject-config-->
+
+  <script src="_static/js/docsify/docsify-plugin-carbon.js"></script>
+
+  <script>
+    // Docsify configuration
+    window.$docsify = {
+      auto2top: true,
+      coverpage: true,
+      executeScript: true,
+      loadSidebar: true,
+      loadNavbar: true,
+      mergeNavbar: true,
+      alias: {
+        '/.*/_sidebar.md': '/_sidebar.md',
+        '/.*/_navbar.md': '/_navbar.md'
+      },
+      maxLevel: 4,
+      subMaxLevel: 3,
+      name: 'Wiki Federation',
+      search: {
+        noData: {
+          '/': '¡No hay resultados!',
+        },
+        paths: 'auto',
+        placeholder: {
+          '/': 'Búsqueda',
+        },
+      },
+      vueComponents: {
+        'button-counter': {
+          template:
+            '<button @click="count += 1">You clicked me {{ count }} times</button>',
+          data: function () {
+            return {
+              count: 0,
+            };
+          },
+        },
+      },
+      vueGlobalOptions: {
+        data: function () {
+          return {
+            count: 0,
+            message: '¡Hola Mundo!',
+            // Fake API response
+            images: [
+              { title: 'Image 1', url: '#' },
+            ],
+          };
+        },
+        computed: {
+          timeOfDay: function () {
+            const date = new Date();
+            const hours = date.getHours();
+
+            if (hours < 12) {
+              return 'morning';
+            } else if (hours < 18) {
+              return 'afternoon';
+            } else {
+              return 'evening';
+            }
+          },
+        },
+        methods: {
+          hello: function () {
+            alert(this.message);
+          },
+        },
+      },
+      vueMounts: {
+        '#counter': {
+          data: function () {
+            return {
+              count: 0,
+            };
+          },
+        },
+      },
+      plugins: [
+        function (hook, vm) {
+          hook.beforeEach(function (html) {
+            return (
+              html +
+              '\n\n----\n\n' +
+              '<p style="text-align: center;">' +
+              '<a href="#/general/agb" style="color: inherit; font-weight: normal; text-decoration: none;">T&C</a>. <a href="#/general/rules" style="color: inherit; font-weight: normal; text-decoration: none;">Reglas</a>. <a href="#/general/legal" style="color: inherit; font-weight: normal; text-decoration: none;">Aviso legal</a>. <a href="#/general/cookies" style="color: inherit; font-weight: normal; text-decoration: none;">Política de cookies</a>. <a href="#/general/privacy" style="color: inherit; font-weight: normal; text-decoration: none;">Política de privacidad</a>.</br>' +
+              '<a href="https://#" target="_blank" style="color: inherit; font-weight: normal; text-decoration: none;">Software desarrollado por sseleman © 2022 Wiki Federation v0.0.3. Todos los derechos reservados.</a>' +
+              '</p>'
+            );
+          })
+        },
+      ],
+    };
+  </script>
+
+  <script src="_static/js/docsify/docsify.min.js"></script>
+  <script src="_static/js/docsify/search.min.js"></script>
+
+  <!--components prismjs-->
+  <script src="_static/js/prism/prism-bash.min.js"></script>
+  <script src="_static/js/prism/prism-markdown.min.js"></script>
+  <script src="_static/js/prism/prism-nginx.min.js"></script>
+  <script src="_static/js/prism/prism-php.min.js"></script>
+
+  <script>
+    // Public site only
+    if (/docsify/.test(location.host)) {
+      document.write(
+        '<script src="_static/js/docsify/ga.min.js"><\/script>'
+      );
+      document.write(
+        '<script src="_static/js/docsify/matomo.min.js"><\/script>'
+      );
+    }
+  </script>
+
+  <script src="_static/js/vue.min.js"></script>
+
+  <script>
+    if (typeof navigator.serviceWorker !== 'undefined') {
+      navigator.serviceWorker.register('sw.js')
+    }
+  </script>
+</body>
+
+</body>
+
+</html>

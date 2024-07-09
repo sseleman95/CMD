@@ -1,32 +1,30 @@
-# CMD
+## docsify
 
-## What is CMD?
+> A magical documentation site generator.
 
-CMD is a simple repository with example commands to run on Windows operating systems.
-The repository is for educational purposes only, I am not responsible if it is used for malicious purposes.
+## What it is
 
-## Repository management
+Docsify generates your documentation website on the fly. Unlike GitBook, it does not generate static html files. Instead, it smartly loads and parses your Markdown files and displays them as a website. To start using it, all you need to do is create an `index.html` and [deploy it on GitHub Pages](deploy.md).
 
-We take advantage of the needs of learners to provide SUPPORT and discuss STUDENT REQUESTS.
+See the [Quick start](quickstart.md) guide for more details.
 
-Issues with the repository can be raised as issues in the main repository.
+## Features
 
-## Status of this project
+- No statically built html files
+- Simple and lightweight
+- Smart full-text search plugin
+- Multiple themes
+- Useful plugin API
+- Emoji support
 
-This project is currently closed.
+## Examples
 
-## Contributing
+Check out the [Showcase](https://github.com/docsifyjs/awesome-docsify#showcase) to see docsify in use.
 
-We appreciate contributions from the community.
+## Donate
 
-## Server requirements
+Please consider donating if you think docsify is helpful to you or that my work is valuable. I am happy if you can help me [buy a cup of coffee](https://github.com/QingWei-Li/donate). :heart:
 
-Windows and 100% access to its console are required
+## Community
 
-## Credits
-
-- 2024 [Daymar J. de G. Lisa](https://github.com/sseleman95) - sseleman95
-
-## License
-
-CMD is created under the MIT license.
+Users and the development team are usually in the [Discord server](https://discord.gg/3NwKFyR).
