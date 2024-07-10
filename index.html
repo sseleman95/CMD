@@ -11,23 +11,14 @@
   <title>CMD</title>
 
   <link rel="shortcut icon" href="_static/icon.png" />
-  <link rel="stylesheet" href="_static/css/themes/vue.css" title="vue" />
-  <link rel="stylesheet" href="_static/css/themes/dark.css" title="dark" disabled />
+  <link rel="stylesheet" href="_static/css/themes/vue.css" title="vue" disabled />
+  <link rel="stylesheet" href="_static/css/themes/dark.css" title="dark" />
   <link rel="stylesheet" href="_static/css/themes/buble.css" title="buble" disabled />
   <link rel="stylesheet" href="_static/css/themes/pure.css" title="pure" disabled />
 
   <style>
     nav.app-nav li ul {
       min-width: 100px;
-    }
-
-    #carbonads {
-      box-shadow: none !important;
-      width: auto !important;
-    }
-
-    .sidebar li>p {
-      color: #505d6b;
     }
   </style>
 </head>
@@ -52,11 +43,10 @@
       mergeNavbar: true,
       alias: {
         '/.*/_sidebar.md': '/_sidebar.md',
-        '/.*/_navbar.md': '/_navbar.md'
       },
       maxLevel: 4,
       subMaxLevel: 3,
-      name: 'Wiki Federation',
+      name: 'CMD',
       search: {
         noData: {
           '/': '¡No hay resultados!',
@@ -124,8 +114,7 @@
               html +
               '\n\n----\n\n' +
               '<p style="text-align: center;">' +
-              '<a href="#/general/agb" style="color: inherit; font-weight: normal; text-decoration: none;">T&C</a>. <a href="#/general/rules" style="color: inherit; font-weight: normal; text-decoration: none;">Reglas</a>. <a href="#/general/legal" style="color: inherit; font-weight: normal; text-decoration: none;">Aviso legal</a>. <a href="#/general/cookies" style="color: inherit; font-weight: normal; text-decoration: none;">Política de cookies</a>. <a href="#/general/privacy" style="color: inherit; font-weight: normal; text-decoration: none;">Política de privacidad</a>.</br>' +
-              '<a href="https://#" target="_blank" style="color: inherit; font-weight: normal; text-decoration: none;">Software desarrollado por sseleman © 2022 Wiki Federation v0.0.3. Todos los derechos reservados.</a>' +
+              '<a href="https://#" target="_blank" style="color: inherit; font-weight: normal; text-decoration: none;">Software desarrollado por sseleman © 2024 CMD v1.0.0. Todos los derechos reservados.</a>' +
               '</p>'
             );
           })
