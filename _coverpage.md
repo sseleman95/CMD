@@ -1,6 +1,6 @@
-![logo](_media/icon.svg)
+![logo](_static/icon.svg)
 
-# docsify <small>4.13.0</small>
+# CMD <small>1.0.0</small>
 
 > A magical documentation site generator.
 
@@ -8,5 +8,5 @@
 - No statically built html files
 - Multiple themes
 
-[GitHub](https://github.com/docsifyjs/docsify/)
-[Getting Started](#docsify)
+[GitHub](https://github.com/sseleman95/CMD/)
+[Getting Started](#CMD)
