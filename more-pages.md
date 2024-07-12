@@ -6,21 +6,20 @@ For example, the directory structure is as follows:
 
 ```text
 .
-└── docs
+├── README.md
+├── guide.md
+└── zh-cn
     ├── README.md
-    ├── guide.md
-    └── zh-cn
-        ├── README.md
-        └── guide.md
+    └── guide.md
 ```
 
 Matching routes
 
 ```text
-docs/README.md        => http://domain.com
-docs/guide.md         => http://domain.com/#/guide
-docs/zh-cn/README.md  => http://domain.com/#/zh-cn/
-docs/zh-cn/guide.md   => http://domain.com/#/zh-cn/guide
+README.md        => http://domain.com
+guide.md         => http://domain.com/#/guide
+zh-cn/README.md  => http://domain.com/#/zh-cn/
+zh-cn/guide.md   => http://domain.com/#/zh-cn/guide
 ```
 
 ## Sidebar
@@ -49,18 +48,17 @@ Create the `_sidebar.md`:
 - [Guide](guide.md)
 ```
 
-You need to create a `.nojekyll` in `./docs` to prevent GitHub Pages from ignoring files that begin with an underscore.
+You need to create a `.nojekyll` in `./` to prevent GitHub Pages from ignoring files that begin with an underscore.
 
 !> Docsify only looks for `_sidebar.md` in the current folder, and uses that, otherwise it falls back to the one configured using `window.$docsify.loadSidebar` config.
 
 Example file structure:
 
 ```text
-└── docs/
-    ├── _sidebar.md
-    ├── index.md
-    ├── getting-started.md
-    └── running-services.md
+├── _sidebar.md
+├── index.md
+├── getting-started.md
+└── running-services.md
 ```
 
 ## Nested Sidebars
@@ -89,7 +87,7 @@ You can specify `alias` to avoid unnecessary fallback.
 A page's `title` tag is generated from the _selected_ sidebar item name. For better SEO, you can customize the title by specifying a string after the filename.
 
 ```markdown
-<!-- docs/_sidebar.md -->
+<!-- _sidebar.md -->
 
 - [Home](/)
 - [Guide](guide.md 'The greatest guide in the world')

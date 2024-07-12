@@ -1,0 +1,9 @@
+# Directories
+_playwright-*
+dist
+lib
+
+# Files
+CHANGELOG.md
+emoji-data.*
+HISTORY.md
