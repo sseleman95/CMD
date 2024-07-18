@@ -24,5 +24,4 @@
   - [Offline Mode (PWA)](pwa.md)
   - [Embed Files](embed-files.md)
 
-- [Awesome docsify](awesome.md)
 - [MIT license](license.md)
