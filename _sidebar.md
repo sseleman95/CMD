@@ -1,3 +1,5 @@
+- [CMD](README.md#CMD)
+
 - Getting started
 
   - [Quick start](quickstart.md)
@@ -18,6 +20,5 @@
 - Guide
 
   - [Deploy](deploy.md)
-  - [Helpers](helpers.md)
 
 - [MIT license](license.md)
