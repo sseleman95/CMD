@@ -19,7 +19,5 @@
 
   - [Deploy](deploy.md)
   - [Helpers](helpers.md)
-  - [Vue compatibility](vue.md)
-  - [CDN](cdn.md)
 
 - [MIT license](license.md)
