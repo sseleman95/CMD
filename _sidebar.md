@@ -25,4 +25,4 @@
   - [Embed Files](embed-files.md)
 
 - [Awesome docsify](awesome.md)
-- [Changelog](changelog.md)
+- [MIT license](license.md)

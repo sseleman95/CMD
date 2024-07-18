@@ -29,4 +29,4 @@ Windows and 100% access to its console are required
 
 ## License
 
-CMD is created under the MIT license.
+CMD is created under the [MIT license](license.md).
