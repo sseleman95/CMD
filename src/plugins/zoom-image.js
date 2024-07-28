@@ -20,5 +20,5 @@ function install(hook) {
   });
 }
 
-window.$docsify = window.$docsify || {};
-$docsify.plugins = [install, ...($docsify.plugins || [])];
+window.$CMD = window.$CMD || {};
+$CMD.plugins = [install, ...($CMD.plugins || [])];

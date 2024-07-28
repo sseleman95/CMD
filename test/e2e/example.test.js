@@ -1,44 +1,44 @@
-import docsifyInit from '../helpers/docsify-init.js';
-import { test, expect } from './fixtures/docsify-init-fixture.js';
+import CMDInit from '../helpers/CMD-init.js';
+import { test, expect } from './fixtures/CMD-init-fixture.js';
 
-test.describe('Creating a Docsify site (e2e tests in Playwright)', () => {
-  test('manual docsify site using playwright methods', async ({ page }) => {
-    // Add docsify target element
+test.describe('Creating a CMD site (e2e tests in Playwright)', () => {
+  test('manual CMD site using playwright methods', async ({ page }) => {
+    // Add CMD target element
     await page.setContent('<div id="app"></div>');
 
-    // Set docsify configuration
+    // Set CMD configuration
     await page.evaluate(() => {
-      window.$docsify = {
+      window.$CMD = {
         el: '#app',
         themeColor: 'red',
       };
     });
 
-    // Inject docsify theme (vue.css)
+    // Inject CMD theme (vue.css)
     await page.addStyleTag({ url: '/dist/themes/vue.css' });
 
-    // Inject docsify.js
-    await page.addScriptTag({ url: '/dist/docsify.js' });
+    // Inject CMD.js
+    await page.addScriptTag({ url: '/dist/CMD.js' });
 
-    // Wait for docsify to initialize
+    // Wait for CMD to initialize
     await page.locator('#main').waitFor();
 
     // Create handle for JavaScript object in browser
-    const $docsify = await page.evaluate(() => window.$docsify);
-    // const $docsify = await page.evaluateHandle(() => window.$docsify);
+    const $CMD = await page.evaluate(() => window.$CMD);
+    // const $CMD = await page.evaluateHandle(() => window.$CMD);
 
     // Test object property and value
-    expect($docsify).toHaveProperty('themeColor', 'red');
+    expect($CMD).toHaveProperty('themeColor', 'red');
   });
 
-  test('Docsify /docs/ site using docsifyInit()', async ({ page }) => {
-    // Load custom docsify
-    // (See ./helpers/docsifyInit.js for details)
-    await docsifyInit({
+  test('CMD /docs/ site using CMDInit()', async ({ page }) => {
+    // Load custom CMD
+    // (See ./helpers/CMDInit.js for details)
+    await CMDInit({
       // _logHTML: true,
     });
 
-    // Verify docsifyInitConfig.markdown content was rendered
+    // Verify CMDInitConfig.markdown content was rendered
     const mainElm = page.locator('#main');
     await expect(mainElm).toHaveCount(1);
     await expect(mainElm).toContainText(
@@ -46,19 +46,18 @@ test.describe('Creating a Docsify site (e2e tests in Playwright)', () => {
     );
   });
 
-  test('custom docsify site using docsifyInit()', async ({ page }) => {
-    const docsifyInitConfig = {
+  test('custom CMD site using CMDInit()', async ({ page }) => {
+    const CMDInitConfig = {
       config: {
-        name: 'Docsify Name',
+        name: 'CMD Name',
         themeColor: 'red',
       },
       markdown: {
         coverpage: `
-          # Docsify Test
+          # CMD Test
 
           > Testing a magical documentation site generator
 
-          [GitHub](https://github.com/docsifyjs/docsify/)
         `,
         homepage: `
           # Hello World
@@ -66,7 +65,6 @@ test.describe('Creating a Docsify site (e2e tests in Playwright)', () => {
           This is the homepage.
         `,
         navbar: `
-          - [docsify.js.org](https://docsify.js.org/#/)
         `,
         sidebar: `
           - [Test Page](test)
@@ -86,7 +84,7 @@ test.describe('Creating a Docsify site (e2e tests in Playwright)', () => {
         document.body.setAttribute('data-test-script', 'pass');
       `,
       scriptURLs: [
-        // docsifyInit() route
+        // CMDInit() route
         'data-test-scripturls.js',
         // Server route
         '/dist/plugins/search.js',
@@ -99,34 +97,34 @@ test.describe('Creating a Docsify site (e2e tests in Playwright)', () => {
       styleURLs: ['/dist/themes/vue.css'],
     };
 
-    await docsifyInit({
-      ...docsifyInitConfig,
+    await CMDInit({
+      ...CMDInitConfig,
       // _logHTML: true,
     });
 
-    const $docsify = await page.evaluate(() => window.$docsify);
+    const $CMD = await page.evaluate(() => window.$CMD);
 
     // Verify config options
-    expect(typeof $docsify).toEqual('object');
-    expect($docsify).toHaveProperty('themeColor', 'red');
-    await expect(page.locator('.app-name')).toHaveText('Docsify Name');
+    expect(typeof $CMD).toEqual('object');
+    expect($CMD).toHaveProperty('themeColor', 'red');
+    await expect(page.locator('.app-name')).toHaveText('CMD Name');
 
-    // Verify docsifyInitConfig.markdown content was rendered
-    await expect(page.locator('section.cover h1')).toHaveText('Docsify Test'); // Coverpage
-    await expect(page.locator('nav.app-nav')).toHaveText('docsify.js.org'); // Navbar
+    // Verify CMDInitConfig.markdown content was rendered
+    await expect(page.locator('section.cover h1')).toHaveText('CMD Test'); // Coverpage
+    await expect(page.locator('nav.app-nav')).toHaveText('CMD.js.org'); // Navbar
     await expect(page.locator('aside.sidebar')).toContainText('Test Page'); // Sidebar
     await expect(page.locator('#main')).toContainText('This is the homepage'); // Homepage
 
-    // Verify docsifyInitConfig.scriptURLs were added to the DOM
-    for (const scriptURL of docsifyInitConfig.scriptURLs) {
+    // Verify CMDInitConfig.scriptURLs were added to the DOM
+    for (const scriptURL of CMDInitConfig.scriptURLs) {
       await expect(page.locator(`script[src$="${scriptURL}"]`)).toHaveCount(1);
     }
 
-    // Verify docsifyInitConfig.scriptURLs were executed
+    // Verify CMDInitConfig.scriptURLs were executed
     await expect(page.locator('body[data-test-scripturls]')).toHaveCount(1);
     await expect(page.locator('.search input[type="search"]')).toHaveCount(1);
 
-    // Verify docsifyInitConfig.script was added to the DOM
+    // Verify CMDInitConfig.script was added to the DOM
     expect(
       await page.evaluate(
         scriptText => {
@@ -134,21 +132,21 @@ test.describe('Creating a Docsify site (e2e tests in Playwright)', () => {
             elm => elm.textContent.replace(/\s+/g, '') === scriptText,
           );
         },
-        docsifyInitConfig.script.replace(/\s+/g, ''),
+        CMDInitConfig.script.replace(/\s+/g, ''),
       ),
     ).toBe(true);
 
-    // Verify docsifyInitConfig.script was executed
+    // Verify CMDInitConfig.script was executed
     await expect(page.locator('body[data-test-script]')).toHaveCount(1);
 
-    // Verify docsifyInitConfig.styleURLs were added to the DOM
-    for (const styleURL of docsifyInitConfig.styleURLs) {
+    // Verify CMDInitConfig.styleURLs were added to the DOM
+    for (const styleURL of CMDInitConfig.styleURLs) {
       await expect(
         page.locator(`link[rel*="stylesheet"][href$="${styleURL}"]`),
       ).toHaveCount(1);
     }
 
-    // Verify docsifyInitConfig.style was added to the DOM
+    // Verify CMDInitConfig.style was added to the DOM
     expect(
       await page.evaluate(
         styleText => {
@@ -156,20 +154,20 @@ test.describe('Creating a Docsify site (e2e tests in Playwright)', () => {
             elm => elm.textContent.replace(/\s+/g, '') === styleText,
           );
         },
-        docsifyInitConfig.style.replace(/\s+/g, ''),
+        CMDInitConfig.style.replace(/\s+/g, ''),
       ),
     ).toBe(true);
 
-    // Verify docsify navigation and docsifyInitConfig.routes
+    // Verify CMD navigation and CMDInitConfig.routes
     await page.click('a[href="#/test"]');
     expect(page.url()).toMatch(/\/test$/);
     await expect(page.locator('#main')).toContainText('This is a custom route');
   });
 
   // test.fixme('image snapshots', async ({ page }) => {
-  //   await docsifyInit({
+  //   await CMDInit({
   //     config: {
-  //       name: 'Docsify Test',
+  //       name: 'CMD Test',
   //     },
   //     markdown: {
   //       homepage: `

@@ -30,8 +30,8 @@ export default [
       globals: {
         ...globals.browser,
         ...globals.node,
-        $docsify: 'readonly',
-        Docsify: 'readonly',
+        $CMD: 'readonly',
+        CMD: 'readonly',
       },
     },
     rules: {

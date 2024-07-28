@@ -1,7 +1,7 @@
 import {
   removeAtag,
   getAndRemoveConfig,
-  getAndRemoveDocisfyIgnoreConfig,
+  getAndRemoveCMDIgnoreConfig,
 } from '../../src/core/render/utils.js';
 import { tree } from '../../src/core/render/tpl.js';
 import { slugify } from '../../src/core/render/slugify.js';
@@ -19,40 +19,40 @@ describe('core/render/utils', () => {
     });
   });
 
-  // getAndRemoveDocisfyIgnorConfig()
+  // getAndRemoveCMDIgnorConfig()
   // ---------------------------------------------------------------------------
-  describe('getAndRemoveDocisfyIgnorConfig()', () => {
-    test('getAndRemoveDocisfyIgnorConfig from <!-- {docsify-ignore} -->', () => {
+  describe('getAndRemoveCMDIgnorConfig()', () => {
+    test('getAndRemoveCMDIgnorConfig from <!-- {CMD-ignore} -->', () => {
       const { content, ignoreAllSubs, ignoreSubHeading } =
-        getAndRemoveDocisfyIgnoreConfig(
-          'My Ignore Title<!-- {docsify-ignore} -->',
+        getAndRemoveCMDIgnoreConfig(
+          'My Ignore Title<!-- {CMD-ignore} -->',
         );
       expect(content).toBe('My Ignore Title');
       expect(ignoreSubHeading).toBeTruthy();
       expect(ignoreAllSubs === undefined).toBeTruthy();
     });
 
-    test('getAndRemoveDocisfyIgnorConfig from <!-- {docsify-ignore-all} -->', () => {
+    test('getAndRemoveCMDIgnorConfig from <!-- {CMD-ignore-all} -->', () => {
       const { content, ignoreAllSubs, ignoreSubHeading } =
-        getAndRemoveDocisfyIgnoreConfig(
-          'My Ignore Title<!-- {docsify-ignore-all} -->',
+        getAndRemoveCMDIgnoreConfig(
+          'My Ignore Title<!-- {CMD-ignore-all} -->',
         );
       expect(content).toBe('My Ignore Title');
       expect(ignoreAllSubs).toBeTruthy();
       expect(ignoreSubHeading === undefined).toBeTruthy();
     });
 
-    test('getAndRemoveDocisfyIgnorConfig from {docsify-ignore}', () => {
+    test('getAndRemoveCMDIgnorConfig from {CMD-ignore}', () => {
       const { content, ignoreAllSubs, ignoreSubHeading } =
-        getAndRemoveDocisfyIgnoreConfig('My Ignore Title{docsify-ignore}');
+        getAndRemoveCMDIgnoreConfig('My Ignore Title{CMD-ignore}');
       expect(content).toBe('My Ignore Title');
       expect(ignoreSubHeading).toBeTruthy();
       expect(ignoreAllSubs === undefined).toBeTruthy();
     });
 
-    test('getAndRemoveDocisfyIgnorConfig from {docsify-ignore-all}', () => {
+    test('getAndRemoveCMDIgnorConfig from {CMD-ignore-all}', () => {
       const { content, ignoreAllSubs, ignoreSubHeading } =
-        getAndRemoveDocisfyIgnoreConfig('My Ignore Title{docsify-ignore-all}');
+        getAndRemoveCMDIgnoreConfig('My Ignore Title{CMD-ignore-all}');
       expect(content).toBe('My Ignore Title');
       expect(ignoreAllSubs).toBeTruthy();
       expect(ignoreSubHeading === undefined).toBeTruthy();
@@ -64,18 +64,18 @@ describe('core/render/utils', () => {
   describe('getAndRemoveConfig()', () => {
     test('parse simple config', () => {
       const result = getAndRemoveConfig(
-        "[filename](_media/example.md ':include')",
+        "[filename](_static/media/example.md ':include')",
       );
 
       expect(result).toMatchObject({
         config: {},
-        str: "[filename](_media/example.md ':include')",
+        str: "[filename](_static/media/example.md ':include')",
       });
     });
 
     test('parse config with arguments', () => {
       const result = getAndRemoveConfig(
-        "[filename](_media/example.md ':include :foo=bar :baz test')",
+        "[filename](_static/media/example.md ':include :foo=bar :baz test')",
       );
 
       expect(result).toMatchObject({
@@ -83,18 +83,18 @@ describe('core/render/utils', () => {
           foo: 'bar',
           baz: true,
         },
-        str: "[filename](_media/example.md ':include test')",
+        str: "[filename](_static/media/example.md ':include test')",
       });
     });
 
     test('parse config with double quotes', () => {
       const result = getAndRemoveConfig(
-        '[filename](_media/example.md ":include")',
+        '[filename](_static/media/example.md ":include")',
       );
 
       expect(result).toMatchObject({
         config: {},
-        str: '[filename](_media/example.md ":include")',
+        str: '[filename](_static/media/example.md ":include")',
       });
     });
   });
@@ -117,12 +117,12 @@ describe('core/render/tpl', () => {
         level: 2,
         slug: '#/cover?id=test',
         title:
-          '<img src="/docs/_media/favicon.ico" data-origin="/_media/favicon.ico" alt="ico">Test',
+          '<img src="/docs/_static/media/favicon.ico" data-origin="/_static/media/favicon.ico" alt="ico">Test',
       },
     ]);
 
     expect(result).toBe(
-      /* html */ '<ul class="app-sub-sidebar"><li><a class="section-link" href="#/cover?id=basic-usage" title="Basic usage"><span style="color:red">Basic usage</span></a></li><li><a class="section-link" href="#/cover?id=custom-background" title="Custom background">Custom background</a></li><li><a class="section-link" href="#/cover?id=test" title="Test"><img src="/docs/_media/favicon.ico" data-origin="/_media/favicon.ico" alt="ico">Test</a></li></ul>',
+      /* html */ '<ul class="app-sub-sidebar"><li><a class="section-link" href="#/cover?id=basic-usage" title="Basic usage"><span style="color:red">Basic usage</span></a></li><li><a class="section-link" href="#/cover?id=custom-background" title="Custom background">Custom background</a></li><li><a class="section-link" href="#/cover?id=test" title="Test"><img src="/docs/_static/media/favicon.ico" data-origin="/_static/media/favicon.ico" alt="ico">Test</a></li></ul>',
     );
   });
 });

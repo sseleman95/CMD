@@ -52,7 +52,7 @@ _modules/*
 
 # Netbeans
 nbproject/
-build/
+# build/
 nbbuild/
 dist/
 nbdist/

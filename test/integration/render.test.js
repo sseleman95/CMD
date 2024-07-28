@@ -1,5 +1,5 @@
 import { stripIndent } from 'common-tags';
-import docsifyInit from '../helpers/docsify-init.js';
+import CMDInit from '../helpers/CMD-init.js';
 import { waitForText } from '../helpers/wait-for.js';
 
 // Suite
@@ -9,7 +9,7 @@ describe('render', function () {
   // ---------------------------------------------------------------------------
   describe('helpers', () => {
     beforeEach(async () => {
-      await docsifyInit();
+      await CMDInit();
     });
 
     test('important content', () => {
@@ -31,7 +31,7 @@ describe('render', function () {
   // ---------------------------------------------------------------------------
   describe('lists', function () {
     beforeEach(async () => {
-      await docsifyInit();
+      await CMDInit();
     });
 
     test('as unordered task list', async function () {
@@ -102,7 +102,7 @@ describe('render', function () {
   // ---------------------------------------------------------------------------
   describe('images', function () {
     beforeEach(async () => {
-      await docsifyInit();
+      await CMDInit();
     });
 
     test('regular', async function () {
@@ -164,7 +164,7 @@ describe('render', function () {
   // ---------------------------------------------------------------------------
   describe('headings', function () {
     beforeEach(async () => {
-      await docsifyInit();
+      await CMDInit();
     });
 
     test('h1', async function () {
@@ -220,7 +220,7 @@ describe('render', function () {
   // ---------------------------------------------------------------------------
   describe('link', function () {
     beforeEach(async () => {
-      await docsifyInit();
+      await CMDInit();
     });
 
     test('regular', async function () {
@@ -232,7 +232,7 @@ describe('render', function () {
     });
 
     test('linkrel', async function () {
-      // const { docsify } = await init('default', {
+      // const { CMD } = await init('default', {
       //   externalLinkTarget: '_blank',
       //   externalLinkRel: 'noopener',
       // });
@@ -290,7 +290,7 @@ describe('render', function () {
   // ---------------------------------------------------------------------------
   describe('skip link', () => {
     test('renders default skip link and label', async () => {
-      await docsifyInit();
+      await CMDInit();
 
       const elm = document.getElementById('skip-to-content');
       const expectText = 'Skip to main content';
@@ -304,7 +304,7 @@ describe('render', function () {
     test('renders custom label from config string', async () => {
       const expectText = 'test';
 
-      await docsifyInit({
+      await CMDInit({
         config: {
           skipLink: expectText,
         },
@@ -319,7 +319,7 @@ describe('render', function () {
       const getSkipLinkText = () =>
         document.getElementById('skip-to-content').textContent;
 
-      await docsifyInit({
+      await CMDInit({
         config: {
           skipLink: {
             '/dir1/dir2/': 'baz',
@@ -343,7 +343,7 @@ describe('render', function () {
     });
 
     test('does not render skip link when false', async () => {
-      await docsifyInit({
+      await CMDInit({
         config: {
           skipLink: false,
         },

@@ -1,6 +1,6 @@
 import { noop } from '../util/core.js';
 
-/** @typedef {import('../Docsify.js').Constructor} Constructor */
+/** @typedef {import('../CMD.js').Constructor} Constructor */
 
 /**
  * @template {!Constructor} T
@@ -37,7 +37,7 @@ export function Lifecycle(Base) {
         if (index >= queue.length) {
           next(data);
         } else if (typeof hookFn === 'function') {
-          const errTitle = 'Docsify plugin error';
+          const errTitle = 'CMD plugin error';
 
           if (hookFn.length === 2) {
             try {

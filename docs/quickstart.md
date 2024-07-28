@@ -1,9 +1,9 @@
 # Quick start
 
-It is recommended to install `docsify-cli` globally, which helps initializing and previewing the website locally.
+It is recommended to install `CMD-cli` globally, which helps initializing and previewing the website locally.
 
 ```bash
-npm i docsify-cli -g
+npm i CMD-cli -g
 ```
 
 ## Initialize
@@ -11,7 +11,7 @@ npm i docsify-cli -g
 If you want to write the documentation in the `./docs` subdirectory, you can use the `init` command.
 
 ```bash
-docsify init ./docs
+CMD init ./docs
 ```
 
 ## Writing content
@@ -26,13 +26,13 @@ You can easily update the documentation in `./docs/README.md`, of course you can
 
 ## Preview your site
 
-Run the local server with `docsify serve`. You can preview your site in your browser on `http://localhost:3000`.
+Run the local server with `CMD serve`. You can preview your site in your browser on `http://localhost:3000`.
 
 ```bash
-docsify serve docs
+CMD serve docs
 ```
 
-?> For more use cases of `docsify-cli`, head over to the [docsify-cli documentation](https://github.com/docsifyjs/docsify-cli).
+?> For more use cases of `CMD-cli`, head over to the [CMD-cli documentation](https://github.com/CMDjs/CMD-cli).
 
 ## Manual initialization
 
@@ -47,44 +47,44 @@ If you don't like `npm` or have trouble installing the tool, you can manually cr
   <head>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@5/themes/vue.min.css" />
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/CMD@5/themes/vue.min.css" />
   </head>
   <body>
     <div id="app"></div>
     <script>
-      window.$docsify = {
+      window.$CMD = {
         //...
       };
     </script>
-    <script src="//cdn.jsdelivr.net/npm/docsify@5"></script>
+    <script src="//cdn.jsdelivr.net/npm/CMD@5"></script>
   </body>
 </html>
 ```
 
-### Specifying docsify versions
+### Specifying CMD versions
 
-?> Note that in both of the examples below, docsify URLs will need to be manually updated when a new major version of docsify is released (e.g. `v5.x.x` => `v6.x.x`). Check the docsify website periodically to see if a new major version has been released.
+?> Note that in both of the examples below, CMD URLs will need to be manually updated when a new major version of CMD is released (e.g. `v5.x.x` => `v6.x.x`). Check the CMD website periodically to see if a new major version has been released.
 
-Specifying a major version in the URL (`@5`) will allow your site to receive non-breaking enhancements (i.e. "minor" updates) and bug fixes (i.e. "patch" updates) automatically. This is the recommended way to load docsify resources.
+Specifying a major version in the URL (`@5`) will allow your site to receive non-breaking enhancements (i.e. "minor" updates) and bug fixes (i.e. "patch" updates) automatically. This is the recommended way to load CMD resources.
 
 <!-- prettier-ignore -->
 ```html
 <!-- Theme -->
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@5/themes/vue.min.css" />
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/CMD@5/themes/vue.min.css" />
 
-<!-- Docsify -->
-<script src="//cdn.jsdelivr.net/npm/docsify@5"></script>
+<!-- CMD -->
+<script src="//cdn.jsdelivr.net/npm/CMD@5"></script>
 ```
 
-If you prefer to lock docsify to a specific version, specify the full version after the `@` symbol in the URL. This is the safest way to ensure your site will look and behave the same way regardless of any changes made to future versions of docsify.
+If you prefer to lock CMD to a specific version, specify the full version after the `@` symbol in the URL. This is the safest way to ensure your site will look and behave the same way regardless of any changes made to future versions of CMD.
 
 <!-- prettier-ignore -->
 ```html
 <!-- Theme -->
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@5/themes/vue.min.css" />
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/CMD@5/themes/vue.min.css" />
 
-<!-- Docsify -->
-<script src="//cdn.jsdelivr.net/npm/docsify@5"></script>
+<!-- CMD -->
+<script src="//cdn.jsdelivr.net/npm/CMD@5"></script>
 ```
 
 ### Manually preview your site
@@ -103,7 +103,7 @@ cd docs && python -m http.server 3000
 
 ## Loading dialog
 
-If you want, you can show a loading dialog before docsify starts to render your documentation:
+If you want, you can show a loading dialog before CMD starts to render your documentation:
 
 ```html
 <!-- index.html -->
@@ -119,7 +119,7 @@ You should set the `data-app` attribute if you changed `el`:
 <div data-app id="main">Please wait...</div>
 
 <script>
-  window.$docsify = {
+  window.$CMD = {
     el: '#main',
   };
 </script>

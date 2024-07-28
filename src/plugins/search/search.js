@@ -1,13 +1,13 @@
 import {
   getAndRemoveConfig,
-  getAndRemoveDocisfyIgnoreConfig,
+  getAndRemoveCMDIgnoreConfig,
 } from '../../core/render/utils.js';
 
 let INDEXS = {};
 
 const LOCAL_STORAGE = {
-  EXPIRE_KEY: 'docsify.search.expires',
-  INDEX_KEY: 'docsify.search.index',
+  EXPIRE_KEY: 'CMD.search.expires',
+  INDEX_KEY: 'CMD.search.index',
 };
 
 function resolveExpireKey(namespace) {
@@ -37,7 +37,7 @@ function escapeHtml(string) {
 function getAllPaths(router) {
   const paths = [];
 
-  Docsify.dom
+  CMD.dom
     .findAll('.sidebar-nav a:not(.section-link):not([data-nosearch])')
     .forEach(node => {
       const href = node.href;
@@ -47,7 +47,7 @@ function getAllPaths(router) {
       if (
         path &&
         paths.indexOf(path) === -1 &&
-        !Docsify.util.isAbsolutePath(originHref)
+        !CMD.util.isAbsolutePath(originHref)
       ) {
         paths.push(path);
       }
@@ -80,7 +80,7 @@ function saveData(maxAge, expireKey, indexKey) {
 
 export function genIndex(path, content = '', router, depth) {
   const tokens = window.marked.lexer(content);
-  const slugify = window.Docsify.slugify;
+  const slugify = window.CMD.slugify;
   const index = {};
   let slug;
   let title = '';
@@ -89,7 +89,7 @@ export function genIndex(path, content = '', router, depth) {
     if (token.type === 'heading' && token.depth <= depth) {
       const { str, config } = getAndRemoveConfig(token.text);
 
-      const text = getAndRemoveDocisfyIgnoreConfig(token.text).content;
+      const text = getAndRemoveCMDIgnoreConfig(token.text).content;
 
       if (config.id) {
         slug = router.toURL(path, { id: slugify(config.id) });
@@ -98,7 +98,7 @@ export function genIndex(path, content = '', router, depth) {
       }
 
       if (str) {
-        title = getAndRemoveDocisfyIgnoreConfig(str).content;
+        title = getAndRemoveCMDIgnoreConfig(str).content;
       }
 
       index[slug] = { slug, title: title, body: '' };
@@ -173,7 +173,6 @@ export function search(query) {
 
     if (postTitle) {
       keywords.forEach(keyword => {
-        // From https://github.com/sindresorhus/escape-string-regexp
         const regEx = new RegExp(
           escapeHtml(ignoreDiacriticalMarks(keyword)).replace(
             /[|\\{}()[\]^$+*?.]/g,
@@ -212,13 +211,13 @@ export function search(query) {
           const matchContent =
             handlePostContent &&
             '...' +
-              handlePostContent
-                .substring(start, end)
-                .replace(
-                  regEx,
-                  word => /* html */ `<em class="search-keyword">${word}</em>`,
-                ) +
-              '...';
+            handlePostContent
+              .substring(start, end)
+              .replace(
+                regEx,
+                word => /* html */ `<em class="search-keyword">${word}</em>`,
+              ) +
+            '...';
 
           resultStr += matchContent;
         }
@@ -292,7 +291,7 @@ export function init(config, vm) {
       return count++;
     }
 
-    Docsify.get(vm.router.getFile(path), false, vm.config.requestHeaders).then(
+    CMD.get(vm.router.getFile(path), false, vm.config.requestHeaders).then(
       result => {
         INDEXS[path] = genIndex(path, result, vm.router, config.depth);
         len === ++count && saveData(config.maxAge, expireKey, indexKey);

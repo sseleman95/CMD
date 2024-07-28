@@ -18,7 +18,7 @@ function init(options) {
 
 function collect() {
   if (!window._paq) {
-    init($docsify.matomo);
+    init($CMD.matomo);
   }
 
   window._paq.push(['setCustomUrl', window.location.hash.substr(1)]);
@@ -27,14 +27,14 @@ function collect() {
 }
 
 const install = function (hook) {
-  if (!$docsify.matomo) {
+  if (!$CMD.matomo) {
     // eslint-disable-next-line no-console
-    console.error('[Docsify] matomo is required.');
+    console.error('[CMD] matomo is required.');
     return;
   }
 
   hook.beforeEach(collect);
 };
 
-window.$docsify = window.$docsify || {};
-$docsify.plugins = [install, ...($docsify.plugins || [])];
+window.$CMD = window.$CMD || {};
+$CMD.plugins = [install, ...($CMD.plugins || [])];

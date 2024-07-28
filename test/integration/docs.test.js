@@ -1,5 +1,5 @@
 import { jest } from '@jest/globals';
-import docsifyInit from '../helpers/docsify-init.js';
+import CMDInit from '../helpers/CMD-init.js';
 
 // Suite
 // -----------------------------------------------------------------------------
@@ -11,7 +11,7 @@ describe('Docs Site', function () {
     // used as background image from causing test to fail
     const mathSpy = jest.spyOn(Math, 'random').mockReturnValue(0.5);
 
-    await docsifyInit({
+    await CMDInit({
       config: {
         coverpage: '_coverpage.md',
       },
@@ -30,7 +30,7 @@ describe('Docs Site', function () {
   });
 
   test('sidebar renders and is unchanged', async () => {
-    await docsifyInit({
+    await CMDInit({
       config: {
         loadSidebar: '_sidebar.md',
       },
@@ -48,7 +48,7 @@ describe('Docs Site', function () {
   });
 
   test('navbar renders and is unchanged', async () => {
-    await docsifyInit({
+    await CMDInit({
       config: {
         loadNavbar: '_navbar.md',
       },

@@ -7,7 +7,7 @@ By default, the hyperlink on the current page is recognized and the content is s
 <!-- prettier-ignore -->
 ```html
 <script>
-  window.$docsify = {
+  window.$CMD = {
     search: 'auto', // default
 
     search: [
@@ -59,34 +59,34 @@ By default, the hyperlink on the current page is recognized and the content is s
     },
   };
 </script>
-<script src="//cdn.jsdelivr.net/npm/docsify@5/dist/docsify.min.js"></script>
-<script src="//cdn.jsdelivr.net/npm/docsify@5/dist/plugins/search.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/CMD@5/dist/CMD.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/CMD@5/dist/plugins/search.min.js"></script>
 ```
 
 This plugin ignores diacritical marks when performing a full text search (e.g., "cafe" will also match "café").
 
 ## Google Analytics
 
-> Google's Universal Analytics service will no longer process new data in standard properties beginning July 1, 2023. Prepare now by setting up and switching over to a Google Analytics 4 property and docsify's gtag.js plugin.
+> Google's Universal Analytics service will no longer process new data in standard properties beginning July 1, 2023. Prepare now by setting up and switching over to a Google Analytics 4 property and CMD's gtag.js plugin.
 
 Install the plugin and configure the track id.
 
 ```html
 <script>
-  window.$docsify = {
+  window.$CMD = {
     ga: 'UA-XXXXX-Y',
   };
 </script>
-<script src="//cdn.jsdelivr.net/npm/docsify@5/dist/docsify.min.js"></script>
-<script src="//cdn.jsdelivr.net/npm/docsify@5/dist/plugins/ga.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/CMD@5/dist/CMD.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/CMD@5/dist/plugins/ga.min.js"></script>
 ```
 
 Configure by `data-ga`.
 
 <!-- prettier-ignore -->
 ```html
-<script src="//cdn.jsdelivr.net/npm/docsify@5/dist/docsify.min.js" data-ga="UA-XXXXX-Y"></script>
-<script src="//cdn.jsdelivr.net/npm/docsify@5/dist/plugins/ga.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/CMD@5/dist/CMD.min.js" data-ga="UA-XXXXX-Y"></script>
+<script src="//cdn.jsdelivr.net/npm/CMD@5/dist/plugins/ga.min.js"></script>
 ```
 
 ## Google Analytics 4 (GA4)
@@ -96,12 +96,12 @@ Install the plugin and configure the track id.
 ```html
 <script>
   // Single ID
-  window.$docsify = {
+  window.$CMD = {
     gtag: 'UA-XXXXX-Y',
   };
 
   // Multiple IDs
-  window.$docsify = {
+  window.$CMD = {
     gtag: [
       'G-XXXXXXXX', // Google Analytics 4 (GA4)
       'UA-XXXXXXXX', // Google Universal Analytics (GA3)
@@ -110,18 +110,18 @@ Install the plugin and configure the track id.
     ],
   };
 </script>
-<script src="//cdn.jsdelivr.net/npm/docsify@5/dist/docsify.min.js"></script>
-<script src="//cdn.jsdelivr.net/npm/docsify@5/dist/plugins/gtag.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/CMD@5/dist/CMD.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/CMD@5/dist/plugins/gtag.min.js"></script>
 ```
 
 ## Emoji
 
-Renders a larger collection of emoji shorthand codes. Without this plugin, Docsify is able to render only a limited number of emoji shorthand codes.
+Renders a larger collection of emoji shorthand codes. Without this plugin, CMD is able to render only a limited number of emoji shorthand codes.
 
-!> Deprecated as of v4.13. Docsify no longer requires this plugin for full emoji support.
+!> Deprecated as of v4.13. CMD no longer requires this plugin for full emoji support.
 
 ```html
-<script src="//cdn.jsdelivr.net/npm/docsify@5/dist/plugins/emoji.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/CMD@5/dist/plugins/emoji.min.js"></script>
 ```
 
 ## External Script
@@ -129,7 +129,7 @@ Renders a larger collection of emoji shorthand codes. Without this plugin, Docsi
 If the script on the page is an external one (imports a js file via `src` attribute), you'll need this plugin to make it work.
 
 ```html
-<script src="//cdn.jsdelivr.net/npm/docsify@5/dist/plugins/external-script.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/CMD@5/dist/plugins/external-script.min.js"></script>
 ```
 
 ## Zoom image
@@ -137,7 +137,7 @@ If the script on the page is an external one (imports a js file via `src` attrib
 Medium's image zoom. Based on [medium-zoom](https://github.com/francoischalifour/medium-zoom).
 
 ```html
-<script src="//cdn.jsdelivr.net/npm/docsify@5/dist/plugins/zoom-image.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/CMD@5/dist/plugins/zoom-image.min.js"></script>
 ```
 
 Exclude the special image
@@ -148,7 +148,7 @@ Exclude the special image
 
 ## Edit on github
 
-Add `Edit on github` button on every pages. Provided by [@njleonzhang](https://github.com/njleonzhang), see this [document](https://github.com/njleonzhang/docsify-edit-on-github)
+Add `Edit on github` button on every pages. Provided by [@njleonzhang](https://github.com/njleonzhang), see this [document](https://github.com/njleonzhang/CMD-edit-on-github)
 
 ## Demo code with instant preview and jsfiddle integration
 
@@ -156,17 +156,17 @@ With this plugin, sample code can be rendered on the page instantly, so that the
 When readers expand the demo box, the source code and description are shown there. if they click the button `Try in Jsfiddle`,
 `jsfiddle.net` will be open with the code of this sample, which allow readers to revise the code and try on their own.
 
-[Vue](https://njleonzhang.github.io/docsify-demo-box-vue/) and [React](https://njleonzhang.github.io/docsify-demo-box-react/) are both supported.
+[Vue](https://njleonzhang.github.io/CMD-demo-box-vue/) and [React](https://njleonzhang.github.io/CMD-demo-box-react/) are both supported.
 
 ## Copy to Clipboard
 
 Add a simple `Click to copy` button to all preformatted code blocks to effortlessly allow users to copy example code from your docs. Provided by [@jperasmus](https://github.com/jperasmus)
 
 ```html
-<script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/CMD-copy-code/dist/CMD-copy-code.min.js"></script>
 ```
 
-See [here](https://github.com/jperasmus/docsify-copy-code/blob/master/README.md) for more details.
+See [here](https://github.com/jperasmus/CMD-copy-code/blob/master/README.md) for more details.
 
 ## Disqus
 
@@ -174,11 +174,11 @@ Disqus comments. https://disqus.com/
 
 ```html
 <script>
-  window.$docsify = {
+  window.$CMD = {
     disqus: 'shortname',
   };
 </script>
-<script src="//cdn.jsdelivr.net/npm/docsify@5/dist/plugins/disqus.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/CMD@5/dist/plugins/disqus.min.js"></script>
 ```
 
 ## Gitalk
@@ -188,7 +188,7 @@ Disqus comments. https://disqus.com/
 ```html
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.css" />
 
-<script src="//cdn.jsdelivr.net/npm/docsify@5/dist/plugins/gitalk.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/CMD@5/dist/plugins/gitalk.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script>
 <script>
   const gitalk = new Gitalk({
@@ -207,23 +207,23 @@ Disqus comments. https://disqus.com/
 
 ## Pagination
 
-Pagination for docsify. By [@imyelo](https://github.com/imyelo)
+Pagination for CMD. By [@imyelo](https://github.com/imyelo)
 
 ```html
-<script src="//cdn.jsdelivr.net/npm/docsify@5/dist/docsify.min.js"></script>
-<script src="//cdn.jsdelivr.net/npm/docsify-pagination/dist/docsify-pagination.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/CMD@5/dist/CMD.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/CMD-pagination/dist/CMD-pagination.min.js"></script>
 ```
 
-Click [here](https://github.com/imyelo/docsify-pagination#readme) to get more information.
+Click [here](https://github.com/imyelo/CMD-pagination#readme) to get more information.
 
 ## Tabs
 
-A docsify.js plugin for displaying tabbed content from markdown.
+A CMD.js plugin for displaying tabbed content from markdown.
 
-- [Documentation & Demos](https://jhildenbiddle.github.io/docsify-tabs)
+- [Documentation & Demos](https://jhildenbiddle.github.io/CMD-tabs)
 
-Provided by [@jhildenbiddle](https://github.com/jhildenbiddle/docsify-tabs).
+Provided by [@jhildenbiddle](https://github.com/jhildenbiddle/CMD-tabs).
 
 ## More plugins
 
-See [awesome-docsify](awesome?id=plugins)
+See [awesome-CMD](awesome?id=plugins)

@@ -46,7 +46,7 @@ function init(ids) {
 
 function collect() {
   if (!window.gtag) {
-    init($docsify.gtag);
+    init($CMD.gtag);
   }
 
   // usage: https://developers.google.com/analytics/devguides/collection/gtagjs/pages
@@ -58,14 +58,14 @@ function collect() {
 }
 
 const install = function (hook) {
-  if (!$docsify.gtag) {
+  if (!$CMD.gtag) {
     // eslint-disable-next-line no-console
-    console.error('[Docsify] gtag is required.');
+    console.error('[CMD] gtag is required.');
     return;
   }
 
   hook.beforeEach(collect);
 };
 
-window.$docsify = window.$docsify || {};
-$docsify.plugins = [install, ...($docsify.plugins || [])];
+window.$CMD = window.$CMD || {};
+$CMD.plugins = [install, ...($CMD.plugins || [])];

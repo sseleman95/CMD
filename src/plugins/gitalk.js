@@ -1,6 +1,6 @@
 /* global gitalk */
 function install(hook) {
-  const dom = Docsify.dom;
+  const dom = CMD.dom;
 
   hook.mounted(_ => {
     const div = dom.create('div');
@@ -20,5 +20,5 @@ function install(hook) {
   });
 }
 
-window.$docsify = window.$docsify || {};
-$docsify.plugins = [install, ...($docsify.plugins || [])];
+window.$CMD = window.$CMD || {};
+$CMD.plugins = [install, ...($CMD.plugins || [])];

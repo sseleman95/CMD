@@ -122,7 +122,7 @@ function style() {
   display: none;
 }`;
 
-  Docsify.dom.style(code);
+  CMD.dom.style(code);
 }
 
 function tpl(defaultValue = '') {
@@ -141,21 +141,21 @@ function tpl(defaultValue = '') {
     <div class="results-status" aria-live="polite"></div>
     <div class="results-panel"></div>
   `;
-  const el = Docsify.dom.create('div', html);
-  const aside = Docsify.dom.find('aside');
+  const el = CMD.dom.create('div', html);
+  const aside = CMD.dom.find('aside');
 
-  Docsify.dom.toggleClass(el, 'search');
+  CMD.dom.toggleClass(el, 'search');
   el.setAttribute('role', 'search');
-  Docsify.dom.before(aside, el);
+  CMD.dom.before(aside, el);
 }
 
 function doSearch(value) {
-  const $search = Docsify.dom.find('div.search');
-  const $panel = Docsify.dom.find($search, '.results-panel');
-  const $clearBtn = Docsify.dom.find($search, '.clear-button');
-  const $sidebarNav = Docsify.dom.find('.sidebar-nav');
-  const $status = Docsify.dom.find('div.search .results-status');
-  const $appName = Docsify.dom.find('.app-name');
+  const $search = CMD.dom.find('div.search');
+  const $panel = CMD.dom.find($search, '.results-panel');
+  const $clearBtn = CMD.dom.find($search, '.clear-button');
+  const $sidebarNav = CMD.dom.find('.sidebar-nav');
+  const $status = CMD.dom.find('div.search .results-status');
+  const $appName = CMD.dom.find('.app-name');
 
   if (!value) {
     $panel.classList.remove('show');
@@ -197,9 +197,9 @@ function doSearch(value) {
 }
 
 function bindEvents() {
-  const $search = Docsify.dom.find('div.search');
-  const $input = Docsify.dom.find($search, 'input');
-  const $inputWrap = Docsify.dom.find($search, '.input-wrap');
+  const $search = CMD.dom.find('div.search');
+  const $input = CMD.dom.find($search, 'input');
+  const $inputWrap = CMD.dom.find($search, '.input-wrap');
 
   let timeId;
 
@@ -210,18 +210,18 @@ function bindEvents() {
     the sidebar is collapsed when you click the INPUT box,
     making it impossible to search.
    */
-  Docsify.dom.on(
+  CMD.dom.on(
     $search,
     'click',
     e =>
       ['A', 'H2', 'P', 'EM'].indexOf(e.target.tagName) === -1 &&
       e.stopPropagation(),
   );
-  Docsify.dom.on($input, 'input', e => {
+  CMD.dom.on($input, 'input', e => {
     clearTimeout(timeId);
     timeId = setTimeout(_ => doSearch(e.target.value.trim()), 100);
   });
-  Docsify.dom.on($inputWrap, 'click', e => {
+  CMD.dom.on($inputWrap, 'click', e => {
     // Click input outside
     if (e.target.tagName !== 'INPUT') {
       $input.value = '';
@@ -231,7 +231,7 @@ function bindEvents() {
 }
 
 function updatePlaceholder(text, path) {
-  const $input = Docsify.dom.getNode('.search input[type="search"]');
+  const $input = CMD.dom.getNode('.search input[type="search"]');
 
   if (!$input) {
     return;

@@ -7,16 +7,16 @@ import { stripIndent } from 'common-tags';
 import { waitForSelector } from './wait-for.js';
 
 const mock = _mock.default;
-const docsifyPATH = '../../dist/docsify.js'; // JSDOM
-const docsifyURL = '/dist/docsify.js'; // Playwright
+const CMDPATH = '../../dist/CMD.js'; // JSDOM
+const CMDURL = '/dist/CMD.js'; // Playwright
 
 /**
- * Jest / Playwright helper for creating custom docsify test sites
+ * Jest / Playwright helper for creating custom CMD test sites
  *
  * @param {Object} options options object
- * @param {Function|Object} [options.config] docsify configuration (merged with default)
- * @param {String} [options.html] HTML content to use for docsify `index.html` page
- * @param {Object} [options.markdown] Docsify markdown content
+ * @param {Function|Object} [options.config] CMD configuration (merged with default)
+ * @param {String} [options.html] HTML content to use for CMD `index.html` page
+ * @param {Object} [options.markdown] CMD markdown content
  * @param {String} [options.markdown.coverpage] coverpage markdown
  * @param {String} [options.markdown.homepage] homepage markdown
  * @param {String} [options.markdown.navbar] navbar markdown
@@ -33,7 +33,7 @@ const docsifyURL = '/dist/docsify.js'; // Playwright
  * @param {String} [options._logHTML.selector='html'] CSS selector(s) to match and log HTML for
  * @returns {Promise}
  */
-async function docsifyInit(options = {}) {
+async function CMDInit(options = {}) {
   const isJSDOM = 'window' in global;
   const isPlaywright = 'page' in global;
 
@@ -64,7 +64,7 @@ async function docsifyInit(options = {}) {
     scriptURLs: [],
     style: '',
     styleURLs: [],
-    testURL: `${process.env.TEST_HOST}/docsify-init.html`,
+    testURL: `${process.env.TEST_HOST}/CMD-init.html`,
     waitForSelector: '#main > *:first-child',
   };
   const settings = {
@@ -206,16 +206,16 @@ async function docsifyInit(options = {}) {
 
   // Set test URL / HTML
   if (isJSDOM) {
-    window.history.pushState({}, 'docsify', settings.testURL);
+    window.history.pushState({}, 'CMD', settings.testURL);
     document.documentElement.innerHTML = settings.html;
   } else if (isPlaywright) {
     await page.goto(settings.testURL);
     await page.waitForLoadState();
   }
 
-  // Docsify configuration
+  // CMD configuration
   if (isJSDOM) {
-    window.$docsify = settings.config;
+    window.$CMD = settings.config;
   } else if (isPlaywright) {
     // Convert config functions to strings
     const configString = JSON.stringify(settings.config, (key, val) =>
@@ -248,7 +248,7 @@ async function docsifyInit(options = {}) {
         }
       });
 
-      window.$docsify = configObj;
+      window.$CMD = configObj;
     }, configString);
   }
 
@@ -277,20 +277,20 @@ async function docsifyInit(options = {}) {
       document.head.appendChild(scriptElm);
     }
 
-    const isDocsifyLoaded = 'Docsify' in window;
+    const isCMDLoaded = 'CMD' in window;
 
-    if (!isDocsifyLoaded) {
-      await import(docsifyPATH);
+    if (!isCMDLoaded) {
+      await import(CMDPATH);
     }
   } else if (isPlaywright) {
     for (const url of settings.scriptURLs) {
       await page.addScriptTag({ url });
     }
 
-    const isDocsifyLoaded = await page.evaluate(() => 'Docsify' in window);
+    const isCMDLoaded = await page.evaluate(() => 'CMD' in window);
 
-    if (!isDocsifyLoaded) {
-      await page.addScriptTag({ url: docsifyURL });
+    if (!isCMDLoaded) {
+      await page.addScriptTag({ url: CMDURL });
     }
   }
 
@@ -328,7 +328,7 @@ async function docsifyInit(options = {}) {
     }
   }
 
-  // Docsify "Ready"
+  // CMD "Ready"
   if (isJSDOM) {
     await waitForSelector(settings.waitForSelector);
   } else if (isPlaywright) {
@@ -371,11 +371,11 @@ async function docsifyInit(options = {}) {
         console.log(html);
       });
     } else {
-      console.warn(`docsify-init(): unable to match selector '${selector}'`);
+      console.warn(`CMD-init(): unable to match selector '${selector}'`);
     }
   }
 
   return Promise.resolve();
 }
 
-export default docsifyInit;
+export default CMDInit;

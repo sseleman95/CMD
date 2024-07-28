@@ -8,7 +8,7 @@ import { emojify } from './emojify.js';
 import {
   getAndRemoveConfig,
   removeAtag,
-  getAndRemoveDocisfyIgnoreConfig,
+  getAndRemoveCMDIgnoreConfig,
 } from './utils.js';
 import { imageCompiler } from './compiler/image.js';
 import { highlightCodeCompiler } from './compiler/code.js';
@@ -32,9 +32,8 @@ const compileMedia = {
   },
   iframe(url, title) {
     return {
-      html: `<iframe src="${url}" ${
-        title || 'width=100% height=400'
-      }></iframe>`,
+      html: `<iframe src="${url}" ${title || 'width=100% height=400'
+        }></iframe>`,
     };
   },
   video(url, title) {
@@ -134,7 +133,7 @@ export class Compiler {
    * page.
    * The basic format is:
    * ```
-   *   [filename](_media/example.md ':include')
+   *   [filename](_static/media/example.md ':include')
    * ```
    *
    * @param {string}   href   The href to the file to embed in the page.
@@ -204,7 +203,6 @@ export class Compiler {
 
     /**
      * Render anchor tag
-     * @link https://github.com/markedjs/marked#overriding-renderer-methods
      * @param {String} text Text content
      * @param {Number} level Type of heading (h<level> tag)
      * @returns {String} Heading element
@@ -214,7 +212,7 @@ export class Compiler {
       const nextToc = { level, title: str };
 
       const { content, ignoreAllSubs, ignoreSubHeading } =
-        getAndRemoveDocisfyIgnoreConfig(str);
+        getAndRemoveCMDIgnoreConfig(str);
       str = content.trim();
 
       nextToc.title = removeAtag(str);

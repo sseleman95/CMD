@@ -50,30 +50,30 @@ export function removeAtag(str = '') {
 }
 
 /**
- * Remove the docsifyIgnore configs and return the str
+ * Remove the CMDIgnore configs and return the str
  * @param {string}   content   The string to deal with.
  *
- * @return {{content: string, ignoreAllSubs: boolean, ignoreSubHeading: boolean}} The string after delete the docsifyIgnore configs, and whether to ignore some or all.
+ * @return {{content: string, ignoreAllSubs: boolean, ignoreSubHeading: boolean}} The string after delete the CMDIgnore configs, and whether to ignore some or all.
  */
-export function getAndRemoveDocisfyIgnoreConfig(content = '') {
+export function getAndRemoveCMDIgnoreConfig(content = '') {
   let ignoreAllSubs, ignoreSubHeading;
-  if (/<!-- {docsify-ignore} -->/g.test(content)) {
-    content = content.replace('<!-- {docsify-ignore} -->', '');
+  if (/<!-- {CMD-ignore} -->/g.test(content)) {
+    content = content.replace('<!-- {CMD-ignore} -->', '');
     ignoreSubHeading = true;
   }
 
-  if (/{docsify-ignore}/g.test(content)) {
-    content = content.replace('{docsify-ignore}', '');
+  if (/{CMD-ignore}/g.test(content)) {
+    content = content.replace('{CMD-ignore}', '');
     ignoreSubHeading = true;
   }
 
-  if (/<!-- {docsify-ignore-all} -->/g.test(content)) {
-    content = content.replace('<!-- {docsify-ignore-all} -->', '');
+  if (/<!-- {CMD-ignore-all} -->/g.test(content)) {
+    content = content.replace('<!-- {CMD-ignore-all} -->', '');
     ignoreAllSubs = true;
   }
 
-  if (/{docsify-ignore-all}/g.test(content)) {
-    content = content.replace('{docsify-ignore-all}', '');
+  if (/{CMD-ignore-all}/g.test(content)) {
+    content = content.replace('{CMD-ignore-all}', '');
     ignoreAllSubs = true;
   }
 

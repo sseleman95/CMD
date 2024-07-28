@@ -1,9 +1,9 @@
-import docsifyInit from '../helpers/docsify-init.js';
-import { test, expect } from './fixtures/docsify-init-fixture.js';
+import CMDInit from '../helpers/CMD-init.js';
+import { test, expect } from './fixtures/CMD-init-fixture.js';
 
 test.describe('Search Plugin Tests', () => {
   test('search readme', async ({ page }) => {
-    const docsifyInitConfig = {
+    const CMDInitConfig = {
       markdown: {
         homepage: `
           # Hello World
@@ -27,7 +27,7 @@ test.describe('Search Plugin Tests', () => {
     const searchFieldElm = page.locator('input[type=search]');
     const resultsHeadingElm = page.locator('.results-panel h2');
 
-    await docsifyInit(docsifyInitConfig);
+    await CMDInit(CMDInitConfig);
 
     await searchFieldElm.fill('hello');
     await expect(resultsHeadingElm).toHaveText('Hello World');
@@ -37,7 +37,7 @@ test.describe('Search Plugin Tests', () => {
   });
 
   test('search ignore title', async ({ page }) => {
-    const docsifyInitConfig = {
+    const CMDInitConfig = {
       markdown: {
         homepage: `
           # Hello World
@@ -55,11 +55,11 @@ test.describe('Search Plugin Tests', () => {
 
             This is the GitHub Pages.
 
-            ## GitHub Pages ignore1 <!-- {docsify-ignore} -->
+            ## GitHub Pages ignore1 <!-- {CMD-ignore} -->
 
             There're three places to populate your docs for your Github repository1.
 
-            ## GitHub Pages ignore2 {docsify-ignore}
+            ## GitHub Pages ignore2 {CMD-ignore}
 
             There're three places to populate your docs for your Github repository2.
           `,
@@ -70,7 +70,7 @@ test.describe('Search Plugin Tests', () => {
     const searchFieldElm = page.locator('input[type=search]');
     const resultsHeadingElm = page.locator('.results-panel h2');
 
-    await docsifyInit(docsifyInitConfig);
+    await CMDInit(CMDInitConfig);
 
     await searchFieldElm.fill('repository1');
     await expect(resultsHeadingElm).toHaveText('GitHub Pages ignore1');
@@ -80,7 +80,7 @@ test.describe('Search Plugin Tests', () => {
   });
 
   test('search only one homepage', async ({ page }) => {
-    const docsifyInitConfig = {
+    const CMDInitConfig = {
       markdown: {
         sidebar: `
           - [README](README)
@@ -106,7 +106,7 @@ test.describe('Search Plugin Tests', () => {
     const resultsHeadingElm = page.locator('.results-panel h2');
     const resultElm = page.locator('.matching-post');
 
-    await docsifyInit(docsifyInitConfig);
+    await CMDInit(CMDInitConfig);
 
     await searchFieldElm.fill('hello');
     await expect(resultElm).toHaveCount(1);
@@ -117,12 +117,12 @@ test.describe('Search Plugin Tests', () => {
   });
 
   test('search ignore diacritical marks', async ({ page }) => {
-    const docsifyInitConfig = {
+    const CMDInitConfig = {
       markdown: {
         homepage: `
           # Qué es
 
-          docsify genera su sitio web de documentación sobre la marcha. A diferencia de GitBook, no genera archivos estáticos html. En cambio, carga y analiza de forma inteligente sus archivos de Markdown y los muestra como sitio web. Todo lo que necesita hacer es crear un index.html para comenzar y desplegarlo en GitHub Pages.
+          CMD genera su sitio web de documentación sobre la marcha. A diferencia de GitBook, no genera archivos estáticos html. En cambio, carga y analiza de forma inteligente sus archivos de Markdown y los muestra como sitio web. Todo lo que necesita hacer es crear un index.html para comenzar y desplegarlo en GitHub Pages.
         `,
       },
       scriptURLs: ['/dist/plugins/search.js'],
@@ -131,7 +131,7 @@ test.describe('Search Plugin Tests', () => {
     const searchFieldElm = page.locator('input[type=search]');
     const resultsHeadingElm = page.locator('.results-panel h2');
 
-    await docsifyInit(docsifyInitConfig);
+    await CMDInit(CMDInitConfig);
 
     await searchFieldElm.fill('documentacion');
     await expect(resultsHeadingElm).toHaveText('Que es');
@@ -141,7 +141,7 @@ test.describe('Search Plugin Tests', () => {
   });
 
   test('search when there is no title', async ({ page }) => {
-    const docsifyInitConfig = {
+    const CMDInitConfig = {
       markdown: {
         homepage: `
           This is some description. We assume autoHeader added the # Title. A long paragraph.
@@ -165,7 +165,7 @@ test.describe('Search Plugin Tests', () => {
     const searchFieldElm = page.locator('input[type=search]');
     const resultsHeadingElm = page.locator('.results-panel h2');
 
-    await docsifyInit(docsifyInitConfig);
+    await CMDInit(CMDInitConfig);
 
     await searchFieldElm.fill('paragraph');
     await expect(resultsHeadingElm).toHaveText('Home Page');
@@ -178,7 +178,7 @@ test.describe('Search Plugin Tests', () => {
   });
 
   test('search when there is no body', async ({ page }) => {
-    const docsifyInitConfig = {
+    const CMDInitConfig = {
       markdown: {
         homepage: `
           # EmptyContent
@@ -192,20 +192,20 @@ test.describe('Search Plugin Tests', () => {
     const searchFieldElm = page.locator('input[type=search]');
     const resultsHeadingElm = page.locator('.results-panel h2');
 
-    await docsifyInit(docsifyInitConfig);
+    await CMDInit(CMDInitConfig);
 
     await searchFieldElm.fill('empty');
     await expect(resultsHeadingElm).toHaveText('EmptyContent');
   });
 
   test('handles default focusSearch binding', async ({ page }) => {
-    const docsifyInitConfig = {
+    const CMDInitConfig = {
       scriptURLs: ['/dist/plugins/search.js'],
     };
 
     const searchFieldElm = page.locator('input[type="search"]');
 
-    await docsifyInit(docsifyInitConfig);
+    await CMDInit(CMDInitConfig);
 
     await expect(searchFieldElm).not.toBeFocused();
     await page.keyboard.press('/');
@@ -213,7 +213,7 @@ test.describe('Search Plugin Tests', () => {
   });
 
   test('handles custom focusSearch binding', async ({ page }) => {
-    const docsifyInitConfig = {
+    const CMDInitConfig = {
       config: {
         search: {
           keyBindings: ['z'],
@@ -224,7 +224,7 @@ test.describe('Search Plugin Tests', () => {
 
     const searchFieldElm = page.locator('input[type="search"]');
 
-    await docsifyInit(docsifyInitConfig);
+    await CMDInit(CMDInitConfig);
 
     await expect(searchFieldElm).not.toBeFocused();
     await page.keyboard.press('/');

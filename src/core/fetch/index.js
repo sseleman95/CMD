@@ -3,7 +3,7 @@ import { getParentPath, stringifyQuery } from '../router/util.js';
 import { noop, isExternal } from '../util/core.js';
 import { get } from '../util/ajax.js';
 
-/** @typedef {import('../Docsify.js').Constructor} Constructor */
+/** @typedef {import('../CMD.js').Constructor} Constructor */
 
 /**
  * @template {!Constructor} T

@@ -10,7 +10,7 @@ import { Lifecycle } from './init/lifecycle.js';
 
 /** @typedef {new (...args: any[]) => any} Constructor */
 
-export class Docsify extends Fetch(
+export class CMD extends Fetch(
   Events(Render(VirtualRoutes(Router(Lifecycle(Object))))),
 ) {
   config = config(this);
@@ -34,7 +34,7 @@ export class Docsify extends Fetch(
         isFn(fn) && fn(this._lifecycle, this);
       } catch (err) {
         if (this.config.catchPluginErrors) {
-          const errTitle = 'Docsify plugin error';
+          const errTitle = 'CMD plugin error';
 
           // eslint-disable-next-line no-console
           console.error(errTitle, err);

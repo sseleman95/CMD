@@ -1,6 +1,6 @@
 # More pages
 
-If you need more pages, you can simply create more markdown files in your docsify directory. If you create a file named `guide.md`, then it is accessible via `/#/guide`.
+If you need more pages, you can simply create more markdown files in your CMD directory. If you create a file named `guide.md`, then it is accessible via `/#/guide`.
 
 For example, the directory structure is as follows:
 
@@ -24,7 +24,7 @@ zh-cn/guide.md   => http://domain.com/#/zh-cn/guide
 
 ## Sidebar
 
-In order to have a sidebar, you can create your own `_sidebar.md` (see [this documentation's sidebar](https://github.com/docsifyjs/docsify/blob/master/docs/_sidebar.md) for an example):
+In order to have a sidebar, you can create your own `_sidebar.md` (see [this documentation's sidebar](https://github.com/CMDjs/CMD/blob/master/docs/_sidebar.md) for an example):
 
 First, you need to set `loadSidebar` to **true**. Details are available in the [configuration paragraph](configuration.md#loadsidebar).
 
@@ -32,11 +32,11 @@ First, you need to set `loadSidebar` to **true**. Details are available in the [
 <!-- index.html -->
 
 <script>
-  window.$docsify = {
+  window.$CMD = {
     loadSidebar: true,
   };
 </script>
-<script src="//cdn.jsdelivr.net/npm/docsify@5/dist/docsify.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/CMD@5/dist/CMD.min.js"></script>
 ```
 
 Create the `_sidebar.md`:
@@ -50,7 +50,7 @@ Create the `_sidebar.md`:
 
 You need to create a `.nojekyll` in `./` to prevent GitHub Pages from ignoring files that begin with an underscore.
 
-!> Docsify only looks for `_sidebar.md` in the current folder, and uses that, otherwise it falls back to the one configured using `window.$docsify.loadSidebar` config.
+!> CMD only looks for `_sidebar.md` in the current folder, and uses that, otherwise it falls back to the one configured using `window.$CMD.loadSidebar` config.
 
 Example file structure:
 
@@ -71,7 +71,7 @@ You can specify `alias` to avoid unnecessary fallback.
 
 ```html
 <script>
-  window.$docsify = {
+  window.$CMD = {
     loadSidebar: true,
     alias: {
       '/.*/_sidebar.md': '/_sidebar.md',
@@ -103,36 +103,36 @@ A custom sidebar can also automatically generate a table of contents by setting 
 <!-- index.html -->
 
 <script>
-  window.$docsify = {
+  window.$CMD = {
     loadSidebar: true,
     subMaxLevel: 2,
   };
 </script>
-<script src="//cdn.jsdelivr.net/npm/docsify@5/dist/docsify.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/CMD@5/dist/CMD.min.js"></script>
 ```
 
 ## Ignoring Subheaders
 
-When `subMaxLevel` is set, each header is automatically added to the table of contents by default. If you want to ignore a specific header, add `<!-- {docsify-ignore} -->` to it.
+When `subMaxLevel` is set, each header is automatically added to the table of contents by default. If you want to ignore a specific header, add `<!-- {CMD-ignore} -->` to it.
 
 ```markdown
 # Getting Started
 
-## Header <!-- {docsify-ignore} -->
+## Header <!-- {CMD-ignore} -->
 
 This header won't appear in the sidebar table of contents.
 ```
 
-To ignore all headers on a specific page, you can use `<!-- {docsify-ignore-all} -->` on the first header of the page.
+To ignore all headers on a specific page, you can use `<!-- {CMD-ignore-all} -->` on the first header of the page.
 
 ```markdown
-# Getting Started <!-- {docsify-ignore-all} -->
+# Getting Started <!-- {CMD-ignore-all} -->
 
 ## Header
 
 This header won't appear in the sidebar table of contents.
 ```
 
-Both `<!-- {docsify-ignore} -->` and `<!-- {docsify-ignore-all} -->` will not be rendered on the page when used.
+Both `<!-- {CMD-ignore} -->` and `<!-- {CMD-ignore-all} -->` will not be rendered on the page when used.
 
-And the `{docsify-ignore}` and `{docsify-ignore-all}` can do the samething as well.
+And the `{CMD-ignore}` and `{CMD-ignore-all}` can do the samething as well.

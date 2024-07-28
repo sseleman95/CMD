@@ -17,7 +17,7 @@ const CONFIG = {
 };
 
 const install = function (hook, vm) {
-  const { util } = Docsify;
+  const { util } = CMD;
   const opts = vm.config.search || CONFIG;
 
   if (Array.isArray(opts)) {
@@ -67,5 +67,5 @@ const install = function (hook, vm) {
   });
 };
 
-window.$docsify = window.$docsify || {};
-$docsify.plugins = [install, ...($docsify.plugins || [])];
+window.$CMD = window.$CMD || {};
+$CMD.plugins = [install, ...($CMD.plugins || [])];

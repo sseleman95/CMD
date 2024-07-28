@@ -4,10 +4,10 @@ if (fixedPath !== location.href) {
 }
 
 function install(hook, vm) {
-  const dom = Docsify.dom;
+  const dom = CMD.dom;
   const disqus = vm.config.disqus;
   if (!disqus) {
-    throw Error('$docsify.disqus is required');
+    throw Error('$CMD.disqus is required');
   }
 
   hook.init(_ => {
@@ -47,5 +47,5 @@ function install(hook, vm) {
   });
 }
 
-window.$docsify = window.$docsify || {};
-$docsify.plugins = [install, ...($docsify.plugins || [])];
+window.$CMD = window.$CMD || {};
+$CMD.plugins = [install, ...($CMD.plugins || [])];

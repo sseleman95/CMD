@@ -4,7 +4,7 @@
   "description": "A magical documentation generator.",
   "homepage": "",
   "repository": "github:sseleman95/CMD",
-  "authors": "https://github.com/sseleman95/CMD/graphs/contributors",
+  "authors": "https://github.com/sseleman95",
   "license": "MIT",
   "collective": {
     "url": ""
@@ -24,7 +24,7 @@
   "type": "module",
   "main": "dist/docsify.js",
   "exports": {
-    ".": "./src/core/Docsify.js",
+    ".": "./src/core/CMD.js",
     "./*": "./*"
   },
   "files": [

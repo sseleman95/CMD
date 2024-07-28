@@ -10,19 +10,19 @@ Set `coverpage` to **true**, and create a `_coverpage.md`:
 <!-- index.html -->
 
 <script>
-  window.$docsify = {
+  window.$CMD = {
     coverpage: true,
   };
 </script>
-<script src="//cdn.jsdelivr.net/npm/docsify@5/dist/docsify.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/CMD@5/dist/CMD.min.js"></script>
 ```
 
 ```markdown
 <!-- _coverpage.md -->
 
-![logo](_media/icon.svg)
+![logo](_static/media/icon.svg)
 
-# docsify <small>3.5</small>
+# CMD <small>3.5</small>
 
 > A magical documentation site generator.
 
@@ -30,8 +30,8 @@ Set `coverpage` to **true**, and create a `_coverpage.md`:
 - No statically built html files
 - Multiple themes
 
-[GitHub](https://github.com/docsifyjs/docsify/)
-[Get Started](#docsify)
+[GitHub](https://github.com/CMDjs/CMD/)
+[Get Started](#CMD)
 ```
 
 ## Custom background
@@ -41,14 +41,14 @@ The background color is generated randomly by default. You can customize the bac
 ```markdown
 <!-- _coverpage.md -->
 
-# docsify <small>3.5</small>
+# CMD <small>3.5</small>
 
-[GitHub](https://github.com/docsifyjs/docsify/)
+[GitHub](https://github.com/CMDjs/CMD/)
 [Get Started](#quick-start)
 
 <!-- background image -->
 
-![](_media/bg.png)
+![](_static/media/bg.png)
 
 <!-- background color -->
 
@@ -80,7 +80,7 @@ For example, your docs structure is like this
 Now, you can set
 
 ```js
-window.$docsify = {
+window.$CMD = {
   coverpage: ['/', '/zh-cn/'],
 };
 ```
@@ -88,7 +88,7 @@ window.$docsify = {
 Or a special file name
 
 ```js
-window.$docsify = {
+window.$CMD = {
   coverpage: {
     '/': 'cover.md',
     '/zh-cn/': 'cover.md',

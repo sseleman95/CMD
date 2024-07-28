@@ -1,6 +1,6 @@
 # Themes
 
-Docsify offers several official themes to choose from. Click a theme name below to preview each theme.
+CMD offers several official themes to choose from. Click a theme name below to preview each theme.
 
 - <a href="#" data-theme="vue">Vue</a>
 - <a href="#" data-theme="buble">Buble</a>
@@ -13,34 +13,34 @@ Official themes are available on multiple [CDNs](cdn). Uncompressed themes are a
 <!-- prettier-ignore -->
 ```html
 <!-- Vue -->
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@5/themes/vue.min.css" />
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/CMD@5/themes/vue.min.css" />
 
 <!-- Buble -->
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@5/themes/buble.min.css" />
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/CMD@5/themes/buble.min.css" />
 
 <!-- Dark -->
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@5/themes/dark.min.css" />
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/CMD@5/themes/dark.min.css" />
 
 <!-- Pure -->
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@5/themes/pure.min.css" />
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/CMD@5/themes/pure.min.css" />
 
 <!-- Dolphin -->
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@5/themes/dolphin.min.css" />
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/CMD@5/themes/dolphin.min.css" />
 ```
 
 ## Endorsed
 
-The Docsify team endorses the following third-party themes. Click a link below the learn more.
+The CMD team endorses the following third-party themes. Click a link below the learn more.
 
-- [docsify-themeable](https://jhildenbiddle.github.io/docsify-themeable) - A delightfully simple theme system for docsify.
+- [CMD-themeable](https://jhildenbiddle.github.io/CMD-themeable) - A delightfully simple theme system for CMD.
 
 ## More Themes
 
-See [Awesome Docsify](awesome) for more themes.
+See [Awesome CMD](awesome) for more themes.
 
 <script>
-  const previewElm = Docsify.dom.findAll('a[data-theme]');
-  const stylesheetElms = Docsify.dom.findAll('link[rel="stylesheet"]');
+  const previewElm = CMD.dom.findAll('a[data-theme]');
+  const stylesheetElms = CMD.dom.findAll('link[rel="stylesheet"]');
 
   previewElm.forEach(elm => {
     elm.onclick = (e) => {

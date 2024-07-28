@@ -10,8 +10,8 @@ import { stripIndent } from 'common-tags';
 
 // Setup
 // =============================================================================
-// Docsify
-const docsifyConfig = {
+// CMD
+const CMDConfig = {
   inputPath: 'src/core/index.js',
   outputDir: 'dist',
   outputName: 'cmd',
@@ -63,7 +63,7 @@ const baseConfig = {
 const bundleConfigs = [];
 
 // Generate rollup configurations
-[docsifyConfig, ...pluginConfigs].forEach(bundleConfig => {
+[CMDConfig, ...pluginConfigs].forEach(bundleConfig => {
   const { inputPath, outputDir, outputName, title } = bundleConfig;
   // prettier-ignore
   const banner = stripIndent`

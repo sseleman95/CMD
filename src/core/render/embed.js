@@ -39,9 +39,9 @@ function walkFetchEmbed({ embedTokens, compile, fetch }, cb) {
 
           // This may contain YAML front matter and will need to be stripped.
           const frontMatterInstalled =
-            ($docsify.frontMatter || {}).installed || false;
+            ($CMD.frontMatter || {}).installed || false;
           if (frontMatterInstalled === true) {
-            text = $docsify.frontMatter.parseMarkdown(text);
+            text = $CMD.frontMatter.parseMarkdown(text);
           }
 
           embedToken = compile.lexer(text);
@@ -58,7 +58,7 @@ function walkFetchEmbed({ embedTokens, compile, fetch }, cb) {
             '```' +
               currentToken.embed.lang +
               '\n' +
-              text.replace(/`/g, '@DOCSIFY_QM@') +
+              text.replace(/`/g, '@CMD_QM@') +
               '\n```\n',
           );
         } else if (currentToken.embed.type === 'mermaid') {

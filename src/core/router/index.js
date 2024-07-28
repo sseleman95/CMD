@@ -12,7 +12,7 @@ import { HTML5History } from './history/html5.js';
 /** @type {Route} */
 let lastRoute = {};
 
-/** @typedef {import('../Docsify.js').Constructor} Constructor */
+/** @typedef {import('../CMD.js').Constructor} Constructor */
 
 /**
  * @template {!Constructor} T

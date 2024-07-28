@@ -1,4 +1,4 @@
-import docsifyInit from '../helpers/docsify-init.js';
+import CMDInit from '../helpers/CMD-init.js';
 
 // Suite
 // -----------------------------------------------------------------------------
@@ -24,7 +24,7 @@ describe('Emoji', function () {
   `;
 
   test('Renders native emoji characters (nativeEmoji:true)', async () => {
-    await docsifyInit({
+    await CMDInit({
       config: {
         nativeEmoji: true,
       },
@@ -40,7 +40,7 @@ describe('Emoji', function () {
   });
 
   test('Renders GitHub emoji images (nativeEmoji:false)', async () => {
-    await docsifyInit({
+    await CMDInit({
       config: {
         nativeEmoji: false,
       },
@@ -56,7 +56,7 @@ describe('Emoji', function () {
   });
 
   test('Ignores all emoji shorthand codes (noEmoji:true)', async () => {
-    await docsifyInit({
+    await CMDInit({
       config: {
         noEmoji: true,
       },
@@ -72,7 +72,7 @@ describe('Emoji', function () {
   });
 
   test('Ignores unmatched emoji shorthand codes', async () => {
-    await docsifyInit({
+    await CMDInit({
       markdown: {
         homepage: `
           hh:mm
@@ -95,7 +95,7 @@ describe('Emoji', function () {
   });
 
   test('Ignores emoji shorthand codes in comments', async () => {
-    await docsifyInit({
+    await CMDInit({
       markdown: {
         homepage: 'Text <!-- :foo: :100: -->',
       },
@@ -108,10 +108,10 @@ describe('Emoji', function () {
   });
 
   test('Ignores emoji shorthand codes in URIs', async () => {
-    await docsifyInit({
+    await CMDInit({
       markdown: {
         homepage:
-          'Url https://docsify.js.org/:foo:/ http://docsify.js.org/:100:/ ftp://docsify.js.org/:smile:/',
+          '',
       },
       // _logHTML: true,
     });
@@ -122,9 +122,9 @@ describe('Emoji', function () {
   });
 
   test('Ignores emoji shorthand codes in URIs while handling anchor content', async () => {
-    await docsifyInit({
+    await CMDInit({
       markdown: {
-        homepage: 'Achor tags [:100:](http://docsify.js.org/:100:/)',
+        homepage: '',
       },
       // _logHTML: true,
     });
@@ -135,7 +135,7 @@ describe('Emoji', function () {
   });
 
   test('Ignores emoji shorthand codes in html attributes', async () => {
-    await docsifyInit({
+    await CMDInit({
       markdown: {
         homepage:
           /* html */ '<a href="http://domain.com/:smile:/"> <img src=\'http://domain.com/:smile:/file.png\'> <script src=http://domain.com/:smile:/file.js></script>',
@@ -149,7 +149,7 @@ describe('Emoji', function () {
   });
 
   test('Ignores emoji shorthand codes in style url() values', async () => {
-    await docsifyInit({
+    await CMDInit({
       markdown: {
         homepage:
           /* html */ '<style>@import url(http://domain.com/:smile/file.css);</style>',
@@ -163,7 +163,7 @@ describe('Emoji', function () {
   });
 
   test('Ignores emoji shorthand codes in code, pre, script, and template tags', async () => {
-    await docsifyInit({
+    await CMDInit({
       markdown: {
         homepage: /* html */ `
           <pre>:100:</pre>

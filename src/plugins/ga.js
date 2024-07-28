@@ -1,4 +1,3 @@
-// From https://github.com/egoist/vue-ga/blob/master/src/index.js
 function appendScript() {
   const script = document.createElement('script');
   script.async = true;
@@ -20,7 +19,7 @@ function init(id) {
 
 function collect() {
   if (!window.ga) {
-    init($docsify.ga);
+    init($CMD.ga);
   }
 
   window.ga('set', 'page', location.hash);
@@ -28,14 +27,14 @@ function collect() {
 }
 
 const install = function (hook) {
-  if (!$docsify.ga) {
+  if (!$CMD.ga) {
     // eslint-disable-next-line no-console
-    console.error('[Docsify] ga is required.');
+    console.error('[CMD] ga is required.');
     return;
   }
 
   hook.beforeEach(collect);
 };
 
-window.$docsify = window.$docsify || {};
-$docsify.plugins = [install, ...($docsify.plugins || [])];
+window.$CMD = window.$CMD || {};
+$CMD.plugins = [install, ...($CMD.plugins || [])];

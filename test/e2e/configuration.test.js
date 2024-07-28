@@ -1,6 +1,6 @@
 /* global fail */
-import docsifyInit from '../helpers/docsify-init.js';
-import { test, expect } from './fixtures/docsify-init-fixture.js';
+import CMDInit from '../helpers/CMD-init.js';
+import { test, expect } from './fixtures/CMD-init-fixture.js';
 
 test.describe('Configuration options', () => {
   test.describe('catchPluginErrors', () => {
@@ -10,7 +10,7 @@ test.describe('Configuration options', () => {
       page.on('console', msg => (consoleMsg = msg.text()));
       page.on('pageerror', err => (errorMsg = err.message));
 
-      await docsifyInit({
+      await CMDInit({
         config: {
           catchPluginErrors: true,
           plugins: [
@@ -33,7 +33,7 @@ test.describe('Configuration options', () => {
       const mainElm = page.locator('#main');
 
       expect(errorMsg).toBeUndefined();
-      expect(consoleMsg).toContain('Docsify plugin error');
+      expect(consoleMsg).toContain('CMD plugin error');
       await expect(mainElm).toContainText('Hello World');
       await expect(mainElm).toContainText('beforeEach');
     });
@@ -44,7 +44,7 @@ test.describe('Configuration options', () => {
       page.on('console', msg => (consoleMsg = msg.text()));
       page.on('pageerror', err => (errorMsg = err.message));
 
-      await docsifyInit({
+      await CMDInit({
         config: {
           catchPluginErrors: false,
           plugins: [
@@ -77,7 +77,7 @@ test.describe('Configuration options', () => {
       });
 
       test('false', async ({ page }) => {
-        await docsifyInit({
+        await CMDInit({
           config: {
             notFoundPage: false,
           },
@@ -87,7 +87,7 @@ test.describe('Configuration options', () => {
       });
 
       test('true with non-404 error', async ({ page }) => {
-        await docsifyInit({
+        await CMDInit({
           config: {
             notFoundPage: true,
           },
@@ -100,7 +100,7 @@ test.describe('Configuration options', () => {
       });
 
       test('string with non-404 error', async ({ page }) => {
-        await docsifyInit({
+        await CMDInit({
           config: {
             notFoundPage: '404.md',
           },
@@ -116,7 +116,7 @@ test.describe('Configuration options', () => {
     test('true: renders _404.md page', async ({ page }) => {
       const expectText = 'Pass';
 
-      await docsifyInit({
+      await CMDInit({
         config: {
           notFoundPage: true,
         },
@@ -132,7 +132,7 @@ test.describe('Configuration options', () => {
     test('string: renders specified 404 page', async ({ page }) => {
       const expectText = 'Pass';
 
-      await docsifyInit({
+      await CMDInit({
         config: {
           notFoundPage: '404.md',
         },
@@ -149,7 +149,7 @@ test.describe('Configuration options', () => {
 
 test.describe('keyBindings', () => {
   test('handles toggleSidebar binding (default)', async ({ page }) => {
-    const docsifyInitConfig = {
+    const CMDInitConfig = {
       markdown: {
         homepage: `
           # Heading 1
@@ -157,7 +157,7 @@ test.describe('keyBindings', () => {
       },
     };
 
-    await docsifyInit(docsifyInitConfig);
+    await CMDInit(CMDInitConfig);
 
     const bodyElm = page.locator('body');
 
@@ -167,7 +167,7 @@ test.describe('keyBindings', () => {
   });
 
   test('handles custom binding', async ({ page }) => {
-    const docsifyInitConfig = {
+    const CMDInitConfig = {
       config: {
         keyBindings: {
           customBinding: {
@@ -189,7 +189,7 @@ test.describe('keyBindings', () => {
 
     const inputElm = page.locator('main input[type="text"]');
 
-    await docsifyInit(docsifyInitConfig);
+    await CMDInit(CMDInitConfig);
 
     await expect(inputElm).toHaveValue('');
     await page.keyboard.press('z');
@@ -199,7 +199,7 @@ test.describe('keyBindings', () => {
   test('ignores event when focused on text input elements', async ({
     page,
   }) => {
-    const docsifyInitConfig = {
+    const CMDInitConfig = {
       config: {
         keyBindings: {
           customBinding: {
@@ -227,7 +227,7 @@ test.describe('keyBindings', () => {
     const selectElm = page.locator('select');
     const textareaElm = page.locator('textarea');
 
-    await docsifyInit(docsifyInitConfig);
+    await CMDInit(CMDInitConfig);
 
     await inputElm.focus();
     await expect(inputElm).toHaveValue('');

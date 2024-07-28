@@ -1,5 +1,5 @@
-import docsifyInit from '../helpers/docsify-init.js';
-import { test, expect } from './fixtures/docsify-init-fixture.js';
+import CMDInit from '../helpers/CMD-init.js';
+import { test, expect } from './fixtures/CMD-init-fixture.js';
 
 const gtagList = [
   'AW-YYYYYY', // Google Ads
@@ -33,7 +33,7 @@ test.describe('Gtag Plugin Tests', () => {
   test('single gtag', async ({ page }) => {
     pageRequestListened(page);
 
-    const docsifyInitConfig = {
+    const CMDInitConfig = {
       config: {
         gtag: gtagList[0],
       },
@@ -41,25 +41,25 @@ test.describe('Gtag Plugin Tests', () => {
       styleURLs: ['/dist/themes/vue.css'],
     };
 
-    await docsifyInit({
-      ...docsifyInitConfig,
+    await CMDInit({
+      ...CMDInitConfig,
     });
 
-    const $docsify = await page.evaluate(() => window.$docsify);
+    const $CMD = await page.evaluate(() => window.$CMD);
 
     // Verify config options
-    expect(typeof $docsify).toEqual('object');
+    expect(typeof $CMD).toEqual('object');
 
-    // console.log($docsify.gtag, $docsify.gtag === '');
+    // console.log($CMD.gtag, $CMD.gtag === '');
 
     // Tests
-    expect($docsify.gtag).not.toEqual('');
+    expect($CMD.gtag).not.toEqual('');
   });
 
   test('multi gtag', async ({ page }) => {
     pageRequestListened(page);
 
-    const docsifyInitConfig = {
+    const CMDInitConfig = {
       config: {
         gtag: gtagList,
       },
@@ -67,18 +67,18 @@ test.describe('Gtag Plugin Tests', () => {
       styleURLs: ['/dist/themes/vue.css'],
     };
 
-    await docsifyInit({
-      ...docsifyInitConfig,
+    await CMDInit({
+      ...CMDInitConfig,
     });
 
-    const $docsify = await page.evaluate(() => window.$docsify);
+    const $CMD = await page.evaluate(() => window.$CMD);
 
     // Verify config options
-    expect(typeof $docsify).toEqual('object');
+    expect(typeof $CMD).toEqual('object');
 
-    // console.log($docsify.gtag, $docsify.gtag === '');
+    // console.log($CMD.gtag, $CMD.gtag === '');
 
     // Tests
-    expect($docsify.gtag).not.toEqual('');
+    expect($CMD.gtag).not.toEqual('');
   });
 });

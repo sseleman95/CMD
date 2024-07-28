@@ -9,10 +9,10 @@ exports[`Docs Site coverpage renders and is unchanged 1`] = `
     )
   ">
       <div class="mask"></div>
-      <div class="cover-main"><p><img src="http://127.0.0.1:4000/_media/icon.svg" data-origin="_media/icon.svg" alt="logo"></p><h1 id="docsify-4130" tabindex="-1"><a href="#/?id=docsify-4130" data-id="docsify-4130" class="anchor"><span>docsify <small>4.13.0</small></span></a></h1><blockquote>
+      <div class="cover-main"><p><img src="http://127.0.0.1:4000/_static/media/icon.svg" data-origin="_static/media/icon.svg" alt="logo"></p><h1 id="CMD-4130" tabindex="-1"><a href="#/?id=CMD-4130" data-id="CMD-4130" class="anchor"><span>CMD <small>4.13.0</small></span></a></h1><blockquote>
 <p>A magical documentation site generator.</p></blockquote>
-<ul><li>Simple and lightweight</li><li>No statically built html files</li><li>Multiple themes</li></ul><p><a href="https://github.com/docsifyjs/docsify/" target="_blank" rel="noopener">GitHub</a>
-<a href="#/?id=docsify">Getting Started</a></p></div>
+<ul><li>Simple and lightweight</li><li>No statically built html files</li><li>Multiple themes</li></ul><p><a href="https://github.com/sseleman95/CMD/" target="_blank" rel="noopener">GitHub</a>
+<a href="#/?id=CMD">Getting Started</a></p></div>
     </section>"
 `;
 
@@ -21,6 +21,6 @@ exports[`Docs Site navbar renders and is unchanged 1`] = `"<nav aria-label="seco
 exports[`Docs Site sidebar renders and is unchanged 1`] = `
 "<aside id="__sidebar" class="sidebar" role="none">
       
-      <div class="sidebar-nav" role="navigation" aria-label="primary"><ul><li><p>Getting started</p><ul><li><a href="#/quickstart">Quick start</a></li><li><a href="#/more-pages">Writing more pages</a></li><li><a href="#/custom-navbar">Custom navbar</a></li><li><a href="#/cover">Cover page</a></li></ul></li><li><p>Customization</p><ul><li><a href="#/configuration">Configuration</a></li><li><a href="#/themes">Themes</a></li><li><a href="#/plugins">List of Plugins</a></li><li><a href="#/write-a-plugin">Write a Plugin</a></li><li><a href="#/markdown">Markdown configuration</a></li><li><a href="#/language-highlight">Language highlighting</a></li><li><a href="#/emoji">Emoji</a></li></ul></li><li><p>Guide</p><ul><li><a href="#/deploy">Deploy</a></li><li><a href="#/helpers">Helpers</a></li><li><a href="#/vue">Vue compatibility</a></li><li><a href="#/cdn">CDN</a></li><li><a href="#/pwa">Offline Mode (PWA)</a></li><li><a href="#/embed-files">Embed Files</a></li></ul></li><li><p><a href="#/awesome">Awesome docsify</a></p></li><li><p><a href="#/changelog">Changelog</a></p></li></ul></div>
+      <div class="sidebar-nav" role="navigation" aria-label="primary"><ul><li><p>Getting started</p><ul><li><a href="#/quickstart">Quick start</a></li><li><a href="#/more-pages">Writing more pages</a></li><li><a href="#/custom-navbar">Custom navbar</a></li><li><a href="#/cover">Cover page</a></li></ul></li><li><p>Customization</p><ul><li><a href="#/configuration">Configuration</a></li><li><a href="#/themes">Themes</a></li><li><a href="#/plugins">List of Plugins</a></li><li><a href="#/write-a-plugin">Write a Plugin</a></li><li><a href="#/markdown">Markdown configuration</a></li><li><a href="#/language-highlight">Language highlighting</a></li><li><a href="#/emoji">Emoji</a></li></ul></li><li><p>Guide</p><ul><li><a href="#/deploy">Deploy</a></li><li><a href="#/helpers">Helpers</a></li><li><a href="#/vue">Vue compatibility</a></li><li><a href="#/cdn">CDN</a></li><li><a href="#/pwa">Offline Mode (PWA)</a></li><li><a href="#/embed-files">Embed Files</a></li></ul></li><li><p><a href="#/awesome">Awesome CMD</a></p></li><li><p><a href="#/changelog">Changelog</a></p></li></ul></div>
     </aside>"
 `;

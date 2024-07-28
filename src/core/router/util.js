@@ -76,7 +76,7 @@ export const resolvePath = cached(path => {
 });
 
 /**
- * Normalises the URI path to handle the case where Docsify is
+ * Normalises the URI path to handle the case where CMD is
  * hosted off explicit files, i.e. /index.html. This function
  * eliminates any path segments that contain `#` fragments.
  *
@@ -92,7 +92,6 @@ export const resolvePath = cached(path => {
  *
  * See here for more information:
  *
- * https://github.com/docsifyjs/docsify/pull/1372
  *
  * @param {string} path The URI path to normalise
  * @return {string} { path, query }

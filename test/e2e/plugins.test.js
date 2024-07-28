@@ -1,6 +1,6 @@
-import docsifyInit from '../helpers/docsify-init.js';
+import CMDInit from '../helpers/CMD-init.js';
 import { waitForFunction } from '../helpers/wait-for.js';
-import { test, expect } from './fixtures/docsify-init-fixture.js';
+import { test, expect } from './fixtures/CMD-init-fixture.js';
 
 test.describe('Plugins', () => {
   test('Hook order', async ({ page }) => {
@@ -18,7 +18,7 @@ test.describe('Plugins', () => {
 
     page.on('console', msg => consoleMsgs.push(msg.text()));
 
-    await docsifyInit({
+    await CMDInit({
       config: {
         plugins: [
           function (hook, vm) {
@@ -75,7 +75,7 @@ test.describe('Plugins', () => {
 
   test.describe('beforeEach()', () => {
     test('return value', async ({ page }) => {
-      await docsifyInit({
+      await CMDInit({
         config: {
           plugins: [
             function (hook, vm) {
@@ -92,7 +92,7 @@ test.describe('Plugins', () => {
     });
 
     test('async return value', async ({ page }) => {
-      await docsifyInit({
+      await CMDInit({
         config: {
           plugins: [
             function (hook, vm) {
@@ -116,7 +116,7 @@ test.describe('Plugins', () => {
 
   test.describe('afterEach()', () => {
     test('return value', async ({ page }) => {
-      await docsifyInit({
+      await CMDInit({
         config: {
           plugins: [
             function (hook, vm) {
@@ -136,7 +136,7 @@ test.describe('Plugins', () => {
     });
 
     test('async return value', async ({ page }) => {
-      await docsifyInit({
+      await CMDInit({
         config: {
           plugins: [
             function (hook, vm) {
@@ -177,7 +177,7 @@ test.describe('Plugins', () => {
     });
 
     test('success (200)', async ({ page }) => {
-      await docsifyInit({
+      await CMDInit({
         config: {
           plugins: [
             function (hook, vm) {
@@ -198,7 +198,7 @@ test.describe('Plugins', () => {
     test('fail (404)', async ({ page }) => {
       const link404Elm = page.locator('a[href*="404"]');
 
-      await docsifyInit({
+      await CMDInit({
         markdown: {
           sidebar: `
             - [404](404.md)

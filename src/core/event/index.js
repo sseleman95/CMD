@@ -1,7 +1,7 @@
 import { isMobile } from '../util/env.js';
 import * as dom from '../util/dom.js';
 
-/** @typedef {import('../Docsify.js').Constructor} Constructor */
+/** @typedef {import('../CMD.js').Constructor} Constructor */
 
 /**
  * @template {!Constructor} T
@@ -16,7 +16,7 @@ export function Events(Base) {
     // Initialization
     // =========================================================================
     /**
-     * Initialize Docsify events
+     * Initialize CMD events
      * One-time setup of listeners, observers, and tasks.
      * @void
      */

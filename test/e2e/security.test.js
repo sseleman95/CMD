@@ -1,5 +1,5 @@
-import docsifyInit from '../helpers/docsify-init.js';
-import { test, expect } from './fixtures/docsify-init-fixture.js';
+import CMDInit from '../helpers/CMD-init.js';
+import { test, expect } from './fixtures/CMD-init-fixture.js';
 
 test.describe('Security - Cross Site Scripting (XSS)', () => {
   const sharedOptions = {
@@ -20,7 +20,7 @@ test.describe('Security - Cross Site Scripting (XSS)', () => {
     }) => {
       const mainElm = page.locator('#main');
 
-      await docsifyInit(sharedOptions);
+      await CMDInit(sharedOptions);
       await expect(mainElm).toContainText('Hello World');
       await page.evaluate(() => (location.hash = '#/test'));
       await expect(mainElm).toContainText('Test Page');

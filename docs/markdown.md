@@ -1,9 +1,9 @@
 # Markdown configuration
 
-**docsify** uses [marked](https://github.com/markedjs/marked) as its Markdown parser. You can customize how it renders your Markdown content to HTML by customizing `renderer`:
+**CMD** uses [marked](https://github.com/markedjs/marked) as its Markdown parser. You can customize how it renders your Markdown content to HTML by customizing `renderer`:
 
 ```js
-window.$docsify = {
+window.$CMD = {
   markdown: {
     smartypants: true,
     renderer: {
@@ -20,7 +20,7 @@ window.$docsify = {
 You can completely customize the parsing rules.
 
 ```js
-window.$docsify = {
+window.$CMD = {
   markdown(marked, renderer) {
     // ...
 
@@ -39,7 +39,7 @@ window.$docsify = {
 let num = 0;
 mermaid.initialize({ startOnLoad: false });
 
-window.$docsify = {
+window.$CMD = {
   markdown: {
     renderer: {
       code(code, lang) {

@@ -30,11 +30,11 @@
 
   <!--inject-config-->
 
-  <script src="_static/js/docsify/docsify-plugin-carbon.js"></script>
+  <script src="_static/js/CMD/CMD-plugin-carbon.js"></script>
 
   <script>
-    // Docsify configuration
-    window.$docsify = {
+    // CMD configuration
+    window.$CMD = {
       auto2top: true,
       coverpage: true,
       executeScript: true,
@@ -123,8 +123,8 @@
     };
   </script>
 
-  <script src="_static/js/docsify/docsify.min.js"></script>
-  <script src="_static/js/docsify/search.min.js"></script>
+  <script src="_static/js/CMD/CMD.min.js"></script>
+  <script src="_static/js/CMD/search.min.js"></script>
 
   <!--components prismjs-->
   <script src="_static/js/prism/prism-bash.min.js"></script>
@@ -134,12 +134,12 @@
 
   <script>
     // Public site only
-    if (/docsify/.test(location.host)) {
+    if (/CMD/.test(location.host)) {
       document.write(
-        '<script src="_static/js/docsify/ga.min.js"><\/script>'
+        '<script src="_static/js/CMD/ga.min.js"><\/script>'
       );
       document.write(
-        '<script src="_static/js/docsify/matomo.min.js"><\/script>'
+        '<script src="_static/js/CMD/matomo.min.js"><\/script>'
       );
     }
   </script>

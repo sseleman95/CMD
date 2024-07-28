@@ -1,5 +1,5 @@
-import docsifyInit from '../helpers/docsify-init.js';
-import { test, expect } from './fixtures/docsify-init-fixture.js';
+import CMDInit from '../helpers/CMD-init.js';
+import { test, expect } from './fixtures/CMD-init-fixture.js';
 
 test.describe('Index file hosting', () => {
   const sharedOptions = {
@@ -10,7 +10,7 @@ test.describe('Index file hosting', () => {
   };
 
   test('should serve from index file', async ({ page }) => {
-    await docsifyInit(sharedOptions);
+    await CMDInit(sharedOptions);
     await expect(page.locator('#main')).toContainText(
       'A magical documentation site generator',
     );
@@ -20,7 +20,7 @@ test.describe('Index file hosting', () => {
   test('should use index file links in sidebar from index file hosting', async ({
     page,
   }) => {
-    await docsifyInit(sharedOptions);
+    await CMDInit(sharedOptions);
     await page.click('a[href="#/quickstart"]');
     await expect(page.locator('#main')).toContainText('Quick start');
     expect(page.url()).toMatch(/index\.html#\/quickstart$/);

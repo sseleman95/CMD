@@ -1,6 +1,4 @@
-/**
- * Fork https://github.com/egoist/docute/blob/master/src/utils/front-matter.js
- */
+
 /* eslint-disable */
 import parser from './yaml.js';
 

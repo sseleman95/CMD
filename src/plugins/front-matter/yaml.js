@@ -1,6 +1,4 @@
-/**
- * Forked from https://github.com/egoist/docute/blob/master/src/utils/yaml.js
- */
+
 /* eslint-disable */
 /*
 YAML parser for Javascript

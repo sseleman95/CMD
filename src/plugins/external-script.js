@@ -1,6 +1,6 @@
 function handleExternalScript() {
-  const container = Docsify.dom.getNode('#main');
-  const scripts = Docsify.dom.findAll(container, 'script');
+  const container = CMD.dom.getNode('#main');
+  const scripts = CMD.dom.findAll(container, 'script');
 
   for (const script of scripts) {
     if (script.src) {
@@ -20,5 +20,5 @@ const install = function (hook) {
   hook.doneEach(handleExternalScript);
 };
 
-window.$docsify = window.$docsify || {};
-$docsify.plugins = [install, ...($docsify.plugins || [])];
+window.$CMD = window.$CMD || {};
+$CMD.plugins = [install, ...($CMD.plugins || [])];

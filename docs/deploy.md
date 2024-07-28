@@ -12,7 +12,7 @@ There are three places to populate your docs for your GitHub repository:
 
 It is recommended that you save your files to the `./docs` subfolder of the `main` branch of your repository. Then select `main branch /docs folder` as your GitHub Pages source in your repository's settings page.
 
-![GitHub Pages](_images/deploy-github-pages.png)
+![GitHub Pages](_static/imgs/deploy-github-pages.png)
 
 !> You can also save files in the root directory and select `main branch`.
 You'll need to place a `.nojekyll` file in the deploy location (such as `/docs` or the gh-pages branch)
@@ -37,7 +37,7 @@ pages:
   - master
 ```
 
-!> You can replace script with `- cp -r docs/. public`, if `./docs` is your Docsify subfolder.
+!> You can replace script with `- cp -r docs/. public`, if `./docs` is your CMD subfolder.
 
 ## Firebase Hosting
 
@@ -56,7 +56,7 @@ Your `firebase.json` file should look similar to this (I changed the deployment 
 }
 ```
 
-Once finished, build the starting template by running `docsify init ./site` (replacing site with the deployment directory you determined when running `firebase init` - public by default). Add/edit the documentation, then run `firebase deploy` from the root project directory.
+Once finished, build the starting template by running `CMD init ./site` (replacing site with the deployment directory you determined when running `firebase init` - public by default). Add/edit the documentation, then run `firebase deploy` from the root project directory.
 
 ## VPS
 
@@ -91,16 +91,16 @@ When using the HTML5 router, you need to set up redirect rules that redirect all
 ## Vercel
 
 1. Install [Vercel CLI](https://vercel.com/download), `npm i -g vercel`
-2. Change directory to your docsify website, for example `cd docs`
+2. Change directory to your CMD website, for example `cd docs`
 3. Deploy with a single command, `vercel`
 
 ## AWS Amplify
 
-1. Set the routerMode in the Docsify project `index.html` to _history_ mode.
+1. Set the routerMode in the CMD project `index.html` to _history_ mode.
 
 ```html
 <script>
-  window.$docsify = {
+  window.$CMD = {
     loadSidebar: true,
     routerMode: 'history',
   };
@@ -138,7 +138,7 @@ frontend:
 ## Stormkit
 
 1.  Login to your [Stormkit](https://www.stormkit.io) account.
-2.  Using the user interface, import your docsify project from one of the three supported Git providers (GitHub, GitLab, or Bitbucket).
+2.  Using the user interface, import your CMD project from one of the three supported Git providers (GitHub, GitLab, or Bitbucket).
 3.  Navigate to the project’s production environment in Stormkit or create a new environment if needed.
 4.  Verify the build command in your Stormkit configuration. By default, Stormkit CI will run `npm run build` but you can specify a custom build command on this page.
 5.  Set output folder to `docs`
@@ -148,10 +148,9 @@ Read more in the [Stormkit Documentation](https://stormkit.io/docs).
 
 ## Docker
 
-- Create docsify files
+- Create CMD files
 
   You need prepare the initial files instead of making them inside the container.
-  See the [Quickstart](https://docsify.js.org/#/quickstart) section for instructions on how to create these files manually or using [docsify-cli](https://github.com/docsifyjs/docsify-cli).
 
   ```sh
   index.html
@@ -162,11 +161,11 @@ Read more in the [Stormkit Documentation](https://stormkit.io/docs).
 
   ```Dockerfile
     FROM node:latest
-    LABEL description="A demo Dockerfile for build Docsify."
+    LABEL description="A demo Dockerfile for build CMD."
     WORKDIR /docs
     RUN npm install -g docsify-cli@latest
     EXPOSE 3000/tcp
-    ENTRYPOINT docsify serve .
+    ENTRYPOINT CMD serve .
 
   ```
 
@@ -181,11 +180,11 @@ Read more in the [Stormkit Documentation](https://stormkit.io/docs).
 - Build docker image
 
   ```sh
-  docker build -f Dockerfile -t docsify/demo .
+  docker build -f Dockerfile -t CMD/demo .
   ```
 
 - Run docker image
 
   ```sh
-  docker run -itp 3000:3000 --name=docsify -v $(pwd):/docs docsify/demo
+  docker run -itp 3000:3000 --name=CMD -v $(pwd):/docs CMD/demo
   ```

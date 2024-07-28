@@ -20,7 +20,7 @@ Working on your first Pull Request ever? You can learn how from this _free_ seri
 
 You can use Gitpod (a free online VS Code-like IDE) for contributing. With a single click it'll launch a workspace and automatically:
 
-- clone the docsify repo.
+- clone the CMD repo.
 - install the dependencies.
 - start `npm run dev`.
 
@@ -30,7 +30,7 @@ npm install && npm run dev
 
 So that you can start straight away.
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/docsifyjs/docsify)
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/CMDjs/CMD)
 
 - Fork it!
 - Create your feature branch: `git checkout -b my-new-feature`
@@ -65,7 +65,7 @@ It is also always helpful to have some context for your pull request. What was t
 
 ## Financial contributions
 
-We also welcome financial contributions in full transparency on our [open collective](https://opencollective.com/docsify).
+We also welcome financial contributions in full transparency on our [open collective](https://opencollective.com/CMD).
 Anyone can file an expense. If the expense makes sense for the development of the community, it will be "merged" in the ledger of our open collective by the core contributors and the person who filed the expense will be reimbursed.
 
 ## Questions

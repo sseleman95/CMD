@@ -3,7 +3,7 @@ import { hyphenate, isPrimitive } from './util/core.js';
 
 const currentScript = document.currentScript;
 
-/** @param {import('./Docsify.js').Docsify} vm */
+/** @param {import('./CMD.js').CMD} vm */
 export default function (vm) {
   const config = Object.assign(
     {
@@ -53,7 +53,7 @@ export default function (vm) {
           // eslint-disable-next-line no-console
           console.warn(
             stripIndent(`
-              $docsify.themeColor is deprecated. Use a --theme-color property in your style sheet. Example:
+              $CMD.themeColor is deprecated. Use a --theme-color property in your style sheet. Example:
               <style>
                 :root {
                   --theme-color: deeppink;
@@ -65,9 +65,9 @@ export default function (vm) {
       },
     },
 
-    typeof window.$docsify === 'function'
-      ? window.$docsify(vm)
-      : window.$docsify,
+    typeof window.$CMD === 'function'
+      ? window.$CMD(vm)
+      : window.$CMD,
   );
 
   // Merge default and user-specified key bindings
@@ -95,7 +95,7 @@ export default function (vm) {
   const script =
     currentScript ||
     Array.from(document.getElementsByTagName('script')).filter(n =>
-      /docsify\./.test(n.src),
+      /CMD\./.test(n.src),
     )[0];
 
   if (script) {
@@ -128,7 +128,7 @@ export default function (vm) {
     config.name = '';
   }
 
-  window.$docsify = config;
+  window.$CMD = config;
 
   return config;
 }

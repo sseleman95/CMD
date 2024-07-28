@@ -1,6 +1,6 @@
 import { stripIndent } from 'common-tags';
-import docsifyInit from '../helpers/docsify-init.js';
-import { test, expect } from './fixtures/docsify-init-fixture.js';
+import CMDInit from '../helpers/CMD-init.js';
+import { test, expect } from './fixtures/CMD-init-fixture.js';
 
 const vueURL = '/node_modules/vue/dist/vue.global.js';
 
@@ -86,7 +86,7 @@ test.describe('Vue.js Compatibility', () => {
   test('Parse templates and render content when import Vue resources', async ({
     page,
   }) => {
-    const docsifyInitConfig = {
+    const CMDInitConfig = {
       config: {},
       markdown: {
         homepage: stripIndent`
@@ -95,9 +95,9 @@ test.describe('Vue.js Compatibility', () => {
       },
     };
 
-    docsifyInitConfig.scriptURLs = vueURL;
+    CMDInitConfig.scriptURLs = vueURL;
 
-    await docsifyInit(docsifyInitConfig);
+    await CMDInit(CMDInitConfig);
     await expect(page.locator('#vuefor')).toHaveText('12345');
   });
 
@@ -105,12 +105,12 @@ test.describe('Vue.js Compatibility', () => {
     test(`renders content when executeScript is ${executeScript}`, async ({
       page,
     }) => {
-      const docsifyInitConfig = getSharedConfig();
+      const CMDInitConfig = getSharedConfig();
 
-      docsifyInitConfig.config.executeScript = executeScript;
-      docsifyInitConfig.scriptURLs = vueURL;
+      CMDInitConfig.config.executeScript = executeScript;
+      CMDInitConfig.scriptURLs = vueURL;
 
-      await docsifyInit(docsifyInitConfig);
+      await CMDInit(CMDInitConfig);
 
       // Static
       await expect(page.locator('#vuefor')).toHaveText('12345');
@@ -137,9 +137,9 @@ test.describe('Vue.js Compatibility', () => {
   }
 
   test('ignores content when Vue is not present', async ({ page }) => {
-    const docsifyInitConfig = getSharedConfig();
+    const CMDInitConfig = getSharedConfig();
 
-    await docsifyInit(docsifyInitConfig);
+    await CMDInit(CMDInitConfig);
     await page.evaluate(() => 'Vue' in window === false);
     await expect(page.locator('#vuefor')).toHaveText('{{ i }}');
     await expect(page.locator('#vuecomponent')).toHaveText('---');
@@ -151,12 +151,12 @@ test.describe('Vue.js Compatibility', () => {
   test('ignores content when vueGlobalOptions is undefined', async ({
     page,
   }) => {
-    const docsifyInitConfig = getSharedConfig();
+    const CMDInitConfig = getSharedConfig();
 
-    docsifyInitConfig.config.vueGlobalOptions = undefined;
-    docsifyInitConfig.scriptURLs = vueURL;
+    CMDInitConfig.config.vueGlobalOptions = undefined;
+    CMDInitConfig.scriptURLs = vueURL;
 
-    await docsifyInit(docsifyInitConfig);
+    await CMDInit(CMDInitConfig);
     await expect(page.locator('#vuefor')).toHaveText('12345');
     await expect(page.locator('#vuecomponent')).toHaveText('0');
     await expect(page.locator('#vuecomponent')).toHaveText('0');
@@ -167,12 +167,12 @@ test.describe('Vue.js Compatibility', () => {
   });
 
   test('ignores content when vueMounts is undefined', async ({ page }) => {
-    const docsifyInitConfig = getSharedConfig();
+    const CMDInitConfig = getSharedConfig();
 
-    docsifyInitConfig.config.vueMounts['#vuemounts'] = undefined;
-    docsifyInitConfig.scriptURLs = vueURL;
+    CMDInitConfig.config.vueMounts['#vuemounts'] = undefined;
+    CMDInitConfig.scriptURLs = vueURL;
 
-    await docsifyInit(docsifyInitConfig);
+    await CMDInit(CMDInitConfig);
     await expect(page.locator('#vuefor')).toHaveText('12345');
     await expect(page.locator('#vuecomponent')).toHaveText('0');
     await expect(page.locator('#vueglobaloptions p')).toHaveText(
@@ -183,12 +183,12 @@ test.describe('Vue.js Compatibility', () => {
   });
 
   test('ignores <script> when executeScript is false', async ({ page }) => {
-    const docsifyInitConfig = getSharedConfig();
+    const CMDInitConfig = getSharedConfig();
 
-    docsifyInitConfig.config.executeScript = false;
-    docsifyInitConfig.scriptURLs = vueURL;
+    CMDInitConfig.config.executeScript = false;
+    CMDInitConfig.scriptURLs = vueURL;
 
-    await docsifyInit(docsifyInitConfig);
+    await CMDInit(CMDInitConfig);
     await expect(page.locator('#vuescript p')).toHaveText('vueglobaloptions');
   });
 });

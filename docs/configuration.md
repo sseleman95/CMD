@@ -1,22 +1,22 @@
 # Configuration
 
-You can configure Docsify by defining `window.$docsify` as an object:
+You can configure CMD by defining `window.$CMD` as an object:
 
 ```html
 <script>
-  window.$docsify = {
-    repo: 'docsifyjs/docsify',
+  window.$CMD = {
+    repo: 'CMDjs/CMD',
     maxLevel: 3,
     coverpage: true,
   };
 </script>
 ```
 
-The config can also be defined as a function, in which case the first argument is the Docsify `vm` instance. The function should return a config object. This can be useful for referencing `vm` in places like the markdown configuration:
+The config can also be defined as a function, in which case the first argument is the CMD `vm` instance. The function should return a config object. This can be useful for referencing `vm` in places like the markdown configuration:
 
 ```html
 <script>
-  window.$docsify = function (vm) {
+  window.$CMD = function (vm) {
     return {
       markdown: {
         renderer: {
@@ -38,12 +38,12 @@ Set the route alias. You can freely manage routing rules. Supports RegExp.
 Do note that order matters! If a route can be matched by multiple aliases, the one you declared first takes precedence.
 
 ```js
-window.$docsify = {
+window.$CMD = {
   alias: {
     '/foo/(.*)': '/bar/$1', // supports regexp
     '/zh-cn/changelog': '/changelog',
     '/changelog':
-      'https://raw.githubusercontent.com/docsifyjs/docsify/master/CHANGELOG',
+      'https://raw.githubusercontent.com/CMDjs/CMD/master/CHANGELOG',
 
     // You may need this if you use routerMode:'history'.
     '/.*/_sidebar.md': '/_sidebar.md', // See #301
@@ -62,7 +62,7 @@ window.$docsify = {
 Scrolls to the top of the screen when the route is changed.
 
 ```js
-window.$docsify = {
+window.$CMD = {
   auto2top: true,
 };
 ```
@@ -72,10 +72,10 @@ window.$docsify = {
 - Type: `Boolean`
 - Default: `false`
 
-If `loadSidebar` and `autoHeader` are both enabled, for each link in `_sidebar.md`, prepend a header to the page before converting it to HTML. See [#78](https://github.com/docsifyjs/docsify/issues/78).
+If `loadSidebar` and `autoHeader` are both enabled, for each link in `_sidebar.md`, prepend a header to the page before converting it to HTML. See [#78](https://github.com/CMDjs/CMD/issues/78).
 
 ```js
-window.$docsify = {
+window.$CMD = {
   loadSidebar: true,
   autoHeader: true,
 };
@@ -88,11 +88,11 @@ window.$docsify = {
 Base path of the website. You can set it to another directory or another domain name.
 
 ```js
-window.$docsify = {
+window.$CMD = {
   basePath: '/path/',
 
   // Load the files from another site
-  basePath: 'https://docsify.js.org/',
+  basePath: 'https://CMD.js.org/',
 
   // Even can load files from other repo
   basePath:
@@ -105,7 +105,7 @@ window.$docsify = {
 - Type: `Boolean`
 - Default: `true`
 
-Determines if Docsify should handle uncaught _synchronous_ plugin errors automatically. This can prevent plugin errors from affecting docsify's ability to properly render live site content.
+Determines if CMD should handle uncaught _synchronous_ plugin errors automatically. This can prevent plugin errors from affecting CMD's ability to properly render live site content.
 
 ## cornerExternalLinkTarget
 
@@ -115,7 +115,7 @@ Determines if Docsify should handle uncaught _synchronous_ plugin errors automat
 Target to open external link at the top right corner. Default `'_blank'` (new window/tab)
 
 ```js
-window.$docsify = {
+window.$CMD = {
   cornerExternalLinkTarget: '_self', // default: '_blank'
 };
 ```
@@ -128,7 +128,7 @@ window.$docsify = {
 Activate the [cover feature](cover.md). If true, it will load from `_coverpage.md`.
 
 ```js
-window.$docsify = {
+window.$CMD = {
   coverpage: true,
 
   // Custom file name
@@ -153,7 +153,7 @@ window.$docsify = {
 The DOM element to be mounted on initialization. It can be a CSS selector string or an actual [HTMLElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement).
 
 ```js
-window.$docsify = {
+window.$CMD = {
   el: '#app',
 };
 ```
@@ -166,7 +166,7 @@ window.$docsify = {
 Execute the script on the page. Only parses the first script tag ([demo](themes)). If Vue is detected, this is `true` by default.
 
 ```js
-window.$docsify = {
+window.$CMD = {
   executeScript: true,
 };
 ```
@@ -189,7 +189,7 @@ Note that if you are running an external script, e.g. an embedded jsfiddle demo,
 Request file extension.
 
 ```js
-window.$docsify = {
+window.$CMD = {
   ext: '.md',
 };
 ```
@@ -202,7 +202,7 @@ window.$docsify = {
 Default `'noopener'` (no opener) prevents the newly opened external page (when [externalLinkTarget](#externallinktarget) is `'_blank'`) from having the ability to control our page. No `rel` is set when it's not `'_blank'`. See [this post](https://mathiasbynens.github.io/rel-noopener/) for more information about why you may want to use this option.
 
 ```js
-window.$docsify = {
+window.$CMD = {
   externalLinkRel: '', // default: 'noopener'
 };
 ```
@@ -215,7 +215,7 @@ window.$docsify = {
 Target to open external links inside the markdown. Default `'_blank'` (new window/tab)
 
 ```js
-window.$docsify = {
+window.$CMD = {
   externalLinkTarget: '_self', // default: '_blank'
 };
 ```
@@ -233,7 +233,7 @@ Example:
 - then display the 404 page.
 
 ```js
-window.$docsify = {
+window.$CMD = {
   fallbackLanguages: ['fr', 'de'],
 };
 ```
@@ -242,11 +242,11 @@ window.$docsify = {
 
 - Type: `String|Function`
 
-We can display the file update date through **{docsify-updated<span>}</span>** variable. And format it by `formatUpdated`.
+We can display the file update date through **{CMD-updated<span>}</span>** variable. And format it by `formatUpdated`.
 See https://github.com/lukeed/tinydate#patterns
 
 ```js
-window.$docsify = {
+window.$CMD = {
   formatUpdated: '{MM}/{DD} {HH}:{mm}',
 
   formatUpdated(time) {
@@ -265,7 +265,7 @@ window.$docsify = {
 This option will completely hide your sidebar and won't render any content on the side.
 
 ```js
-window.$docsify = {
+window.$CMD = {
   hideSidebar: true,
 };
 ```
@@ -278,13 +278,13 @@ window.$docsify = {
 `README.md` in your docs folder will be treated as the homepage for your website, but sometimes you may need to serve another file as your homepage.
 
 ```js
-window.$docsify = {
+window.$CMD = {
   // Change to /home.md
   homepage: 'home.md',
 
   // Or use the readme in your repo
   homepage:
-    'https://raw.githubusercontent.com/docsifyjs/docsify/master/README.md',
+    'https://raw.githubusercontent.com/CMDjs/CMD/master/README.md',
 };
 ```
 
@@ -304,7 +304,7 @@ The `callback` function receive a [keydown event](https://developer.mozilla.org/
 !> Let site visitors know your custom key bindings are available! If a binding is associated with a DOM element, consider inserting a `<kbd>` element as a visual cue (e.g., <kbd>alt</kbd> + <kbd>a</kbd>) or adding [title](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/title) and [aria-keyshortcuts](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-keyshortcuts) attributes for hover/focus hints.
 
 ```js
-window.$docsify = {
+window.$CMD = {
   keyBindings: {
     // Custom key binding
     myCustomBinding: {
@@ -320,14 +320,14 @@ window.$docsify = {
 Key bindings can be disabled entirely or individually by setting the binding configuration to `false`.
 
 ```js
-window.$docsify = {
+window.$CMD = {
   // Disable all key bindings
   keyBindings: false,
 };
 ```
 
 ```js
-window.$docsify = {
+window.$CMD = {
   keyBindings: {
     // Disable individual key bindings
     focusSearch: false,
@@ -344,7 +344,7 @@ window.$docsify = {
 Loads navbar from the Markdown file `_navbar.md` if **true**, else loads it from the path specified.
 
 ```js
-window.$docsify = {
+window.$CMD = {
   // load from _navbar.md
   loadNavbar: true,
 
@@ -361,7 +361,7 @@ window.$docsify = {
 Loads sidebar from the Markdown file `_sidebar.md` if **true**, else loads it from the path specified.
 
 ```js
-window.$docsify = {
+window.$CMD = {
   // load from _sidebar.md
   loadSidebar: true,
 
@@ -379,8 +379,8 @@ Website logo as it appears in the sidebar. You can resize it using CSS.
 !> Logo will only bee visible if `name` prop is also set. See [name](#name) configuration.
 
 ```js
-window.$docsify = {
-  logo: '/_media/icon.svg',
+window.$CMD = {
+  logo: '/_static/media/icon.svg',
 };
 ```
 
@@ -391,7 +391,7 @@ window.$docsify = {
 See [Markdown configuration](markdown.md).
 
 ```js
-window.$docsify = {
+window.$CMD = {
   // object
   markdown: {
     smartypants: true,
@@ -418,7 +418,7 @@ window.$docsify = {
 Maximum Table of content level.
 
 ```js
-window.$docsify = {
+window.$CMD = {
   maxLevel: 4,
 };
 ```
@@ -431,7 +431,7 @@ window.$docsify = {
 Navbar will be merged with the sidebar on smaller screens.
 
 ```js
-window.$docsify = {
+window.$CMD = {
   mergeNavbar: true,
 };
 ```
@@ -443,16 +443,16 @@ window.$docsify = {
 Website name as it appears in the sidebar.
 
 ```js
-window.$docsify = {
-  name: 'docsify',
+window.$CMD = {
+  name: 'CMD',
 };
 ```
 
 The name field can also contain custom HTML for easier customization:
 
 ```js
-window.$docsify = {
-  name: '<span>docsify</span>',
+window.$CMD = {
+  name: '<span>CMD</span>',
 };
 ```
 
@@ -464,7 +464,7 @@ window.$docsify = {
 The URL that the website `name` links to.
 
 ```js
-window.$docsify = {
+window.$CMD = {
   nameLink: '/',
 
   // For each route
@@ -483,7 +483,7 @@ window.$docsify = {
 Render emoji shorthand codes using GitHub-style emoji images or platform-native emoji characters.
 
 ```js
-window.$docsify = {
+window.$CMD = {
   nativeEmoji: true,
 };
 ```
@@ -532,10 +532,10 @@ To render shorthand codes as text, replace `:` characters with the `&colon;` HTM
 
 - Type: `Array<string>`
 
-Sometimes we do not want docsify to handle our links. See [#203](https://github.com/docsifyjs/docsify/issues/203). We can skip compiling of certain links by specifying an array of strings. Each string is converted into to a regular expression (`RegExp`) and the _whole_ href of a link is matched against it.
+Sometimes we do not want CMD to handle our links. See [#203](https://github.com/CMDjs/CMD/issues/203). We can skip compiling of certain links by specifying an array of strings. Each string is converted into to a regular expression (`RegExp`) and the _whole_ href of a link is matched against it.
 
 ```js
-window.$docsify = {
+window.$CMD = {
   noCompileLinks: ['/foo', '/bar/.*'],
 };
 ```
@@ -548,7 +548,7 @@ window.$docsify = {
 Disabled emoji parsing and render all emoji shorthand as text.
 
 ```js
-window.$docsify = {
+window.$CMD = {
   noEmoji: true,
 };
 ```
@@ -587,7 +587,7 @@ To disable emoji parsing of individual shorthand codes, replace `:` characters w
 Display default "404 - Not Found" message:
 
 ```js
-window.$docsify = {
+window.$CMD = {
   notFoundPage: false,
 };
 ```
@@ -595,7 +595,7 @@ window.$docsify = {
 Load the `_404.md` file:
 
 ```js
-window.$docsify = {
+window.$CMD = {
   notFoundPage: true,
 };
 ```
@@ -603,7 +603,7 @@ window.$docsify = {
 Load the customized path of the 404 page:
 
 ```js
-window.$docsify = {
+window.$CMD = {
   notFoundPage: 'my404.md',
 };
 ```
@@ -611,7 +611,7 @@ window.$docsify = {
 Load the right 404 page according to the localization:
 
 ```js
-window.$docsify = {
+window.$CMD = {
   notFoundPage: {
     '/': '_404.md',
     '/de': 'de/_404.md',
@@ -629,7 +629,7 @@ window.$docsify = {
 Only coverpage is loaded when visiting the home page.
 
 ```js
-window.$docsify = {
+window.$CMD = {
   onlyCover: false,
 };
 ```
@@ -665,7 +665,7 @@ config/example.md     => http://domain.com/zh-cn/config/example
 ```
 
 ```js
-window.$docsify = {
+window.$CMD = {
   // Relative path enabled
   relativePath: true,
 
@@ -681,10 +681,10 @@ window.$docsify = {
 Configure the repository url, or a string of `username/repo`, to add the [GitHub Corner](http://tholman.com/github-corners/) widget in the top right corner of the site.
 
 ```js
-window.$docsify = {
-  repo: 'docsifyjs/docsify',
+window.$CMD = {
+  repo: 'CMDjs/CMD',
   // or
-  repo: 'https://github.com/docsifyjs/docsify/',
+  repo: 'https://github.com/CMDjs/CMD/',
 };
 ```
 
@@ -695,7 +695,7 @@ window.$docsify = {
 Set the request resource headers.
 
 ```js
-window.$docsify = {
+window.$CMD = {
   requestHeaders: {
     'x-token': 'xxx',
   },
@@ -705,7 +705,7 @@ window.$docsify = {
 Such as setting the cache
 
 ```js
-window.$docsify = {
+window.$CMD = {
   requestHeaders: {
     'cache-control': 'max-age=600',
   },
@@ -720,7 +720,7 @@ Configure the URL format that the paths of your site will use.
 - Default: `'hash'`
 
 ```js
-window.$docsify = {
+window.$CMD = {
   routerMode: 'history', // default: 'hash'
 };
 ```
@@ -736,14 +736,14 @@ uses the path that follows the `#` to determine what markdown files to load. For
 example, a complete hash-based URL may look like this:
 `https://example.com/#/path/to/page`. The browser will actually load
 `https://example.com` (assuming your static server serves
-`index.html` by default, as most do), and then the Docsify JavaScript code will
+`index.html` by default, as most do), and then the CMD JavaScript code will
 look at the `/#/...` and determine the markdown file to load and render.
-Additionally, when clicking on a link, the Docsify router will change the
+Additionally, when clicking on a link, the CMD router will change the
 content after the hash dynamically. The value of `location.pathname` will still be
 `/` no matter what. The parts of a hash path are _not_ sent to the server when
 visiting such a URL in a browser.
 
-On the other hand, history-based routing means the Docsify JavaScript will use
+On the other hand, history-based routing means the CMD JavaScript will use
 the [History API](https://developer.mozilla.org/en-US/docs/Web/API/History_API)
 to dynamically change the URL without using a `#`. This means that all URLs will
 be considered "real" by search engines, and the full path will be sent to the
@@ -767,7 +767,7 @@ without the `#` in the URL and SEO optimization.
 > loaded no matter which path is being visited.
 >
 > ```js
-> window.$docsify = {
+> window.$CMD = {
 >   routerMode: 'history',
 >   alias: {
 >     '/.*/_sidebar.md': '/_sidebar.md',
@@ -791,7 +791,7 @@ A route function receives up to three parameters:
 Do note that order matters! Routes are matched the same order you declare them in, which means that in cases where you have overlapping routes, you might want to list the more specific ones first.
 
 ```js
-window.$docsify = {
+window.$CMD = {
   routes: {
     // Basic match w/ return string
     '/foo': '# Custom Markdown',
@@ -818,7 +818,7 @@ window.$docsify = {
 Other than strings, route functions can return a falsy value (`null` \ `undefined`) to indicate that they ignore the current request:
 
 ```js
-window.$docsify = {
+window.$CMD = {
   routes: {
     // accepts everything other than dogs (synchronous)
     '/pets/(.+)'(route, matched) {
@@ -845,9 +845,9 @@ window.$docsify = {
 Finally, if you have a specific path that has a real markdown file (and therefore should not be matched by your route), you can opt it out by returning an explicit `false` value:
 
 ```js
-window.$docsify = {
+window.$CMD = {
   routes: {
-    // if you look up /pets/cats, docsify will skip all routes and look for "pets/cats.md"
+    // if you look up /pets/cats, CMD will skip all routes and look for "pets/cats.md"
     '/pets/cats'(route, matched) {
       return false;
     }
@@ -870,14 +870,14 @@ Determines if/how the site's [skip navigation link](https://webaim.org/technique
 
 ```js
 // Render skip link for all routes (default)
-window.$docsify = {
+window.$CMD = {
   skipLink: 'Skip to main content',
 };
 ```
 
 ```js
 // Render localized skip links based on route paths
-window.$docsify = {
+window.$CMD = {
   skipLink: {
     '/es/': 'Saltar al contenido principal',
     '/de-de/': 'Ga naar de hoofdinhoud',
@@ -889,7 +889,7 @@ window.$docsify = {
 
 ```js
 // Do not render skip link
-window.$docsify = {
+window.$CMD = {
   skipLink: false,
 };
 ```
@@ -902,7 +902,7 @@ window.$docsify = {
 Add table of contents (TOC) in custom sidebar.
 
 ```js
-window.$docsify = {
+window.$CMD = {
   subMaxLevel: 2,
 };
 ```
@@ -915,7 +915,7 @@ If you have a link to the homepage in the sidebar and want it to be shown as act
   - [Another page](another.md)
 ```
 
-For more details, see [#1131](https://github.com/docsifyjs/docsify/issues/1131).
+For more details, see [#1131](https://github.com/CMDjs/CMD/issues/1131).
 
 ## themeColor (_deprecated_)
 
@@ -934,7 +934,7 @@ For more details, see [#1131](https://github.com/docsifyjs/docsify/issues/1131).
 Customize the theme color.
 
 ```js
-window.$docsify = {
+window.$CMD = {
   themeColor: '#3F51B5',
 };
 ```
@@ -947,7 +947,7 @@ window.$docsify = {
 Adds a space on top when scrolling the content page to reach the selected section. This is useful in case you have a _sticky-header_ layout and you want to align anchors to the end of your header.
 
 ```js
-window.$docsify = {
+window.$CMD = {
   topMargin: 90, // default: 0
 };
 ```
@@ -959,7 +959,7 @@ window.$docsify = {
 Creates and registers global [Vue](https://vuejs.org/guide/essentials/component-basics.html). Components are specified using the component name as the key with an object containing Vue options as the value. Component `data` is unique for each instance and will not persist as users navigate the site.
 
 ```js
-window.$docsify = {
+window.$CMD = {
   vueComponents: {
     'button-counter': {
       template: `
@@ -992,7 +992,7 @@ window.$docsify = {
 Specifies global Vue options for use with Vue content not explicitly mounted with [vueMounts](#mounting-dom-elements), [vueComponents](#components), or a [markdown script](#markdown-script). Changes to global `data` will persist and be reflected anywhere global references are used.
 
 ```js
-window.$docsify = {
+window.$CMD = {
   vueGlobalOptions: {
     data() {
       return {
@@ -1023,10 +1023,10 @@ window.$docsify = {
 
 - Type: `Object`
 
-Specifies DOM elements to mount as Vue instances and their associated options. Mount elements are specified using a [CSS selector](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors) as the key with an object containing Vue options as their value. Docsify will mount the first matching element in the main content area each time a new page is loaded. Mount element `data` is unique for each instance and will not persist as users navigate the site.
+Specifies DOM elements to mount as Vue instances and their associated options. Mount elements are specified using a [CSS selector](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors) as the key with an object containing Vue options as their value. CMD will mount the first matching element in the main content area each time a new page is loaded. Mount element `data` is unique for each instance and will not persist as users navigate the site.
 
 ```js
-window.$docsify = {
+window.$CMD = {
   vueMounts: {
     '#counter': {
       data() {

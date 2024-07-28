@@ -7,7 +7,7 @@ import { Compiler } from './compiler.js';
 import * as tpl from './tpl.js';
 import { prerenderEmbed } from './embed.js';
 
-/** @typedef {import('../Docsify.js').Constructor} Constructor */
+/** @typedef {import('../CMD.js').Constructor} Constructor */
 
 /**
  * @template {!Constructor} T
@@ -49,11 +49,11 @@ export function Render(Base) {
             ? tinydate(fn)(new Date(updated))
             : updated;
 
-      return html.replace(/{docsify-updated}/g, updated);
+      return html.replace(/{CMD-updated}/g, updated);
     }
 
     #renderMain(html) {
-      const docsifyConfig = this.config;
+      const CMDConfig = this.config;
       const markdownElm = dom.find('.markdown-section');
       const vueVersion =
         'Vue' in window &&
@@ -85,22 +85,22 @@ export function Render(Base) {
       this._renderTo(markdownElm, html);
 
       // Render sidebar with the TOC
-      !docsifyConfig.loadSidebar && this._renderSidebar();
+      !CMDConfig.loadSidebar && this._renderSidebar();
 
       // Execute markdown <script>
       if (
-        docsifyConfig.executeScript ||
-        ('Vue' in window && docsifyConfig.executeScript !== false)
+        CMDConfig.executeScript ||
+        ('Vue' in window && CMDConfig.executeScript !== false)
       ) {
         this.#executeScript();
       }
 
       // Handle Vue content not mounted by markdown <script>
       if ('Vue' in window) {
-        const vueGlobalOptions = docsifyConfig.vueGlobalOptions || {};
+        const vueGlobalOptions = CMDConfig.vueGlobalOptions || {};
         const vueMountData = [];
         const vueComponentNames = Object.keys(
-          docsifyConfig.vueComponents || {},
+          CMDConfig.vueComponents || {},
         );
 
         // Register global vueComponents
@@ -109,7 +109,7 @@ export function Render(Base) {
             const isNotRegistered = !window.Vue.options.components[name];
 
             if (isNotRegistered) {
-              window.Vue.component(name, docsifyConfig.vueComponents[name]);
+              window.Vue.component(name, CMDConfig.vueComponents[name]);
             }
           });
         }
@@ -125,10 +125,10 @@ export function Render(Base) {
 
         // vueMounts
         vueMountData.push(
-          ...Object.keys(docsifyConfig.vueMounts || {})
+          ...Object.keys(CMDConfig.vueMounts || {})
             .map(cssSelector => [
               dom.find(markdownElm, cssSelector),
-              docsifyConfig.vueMounts[cssSelector],
+              CMDConfig.vueMounts[cssSelector],
             ])
             .filter(([elm, vueConfig]) => elm),
         );
@@ -165,7 +165,7 @@ export function Render(Base) {
               const isVueMount =
                 // is a component
                 elm.tagName.toLowerCase() in
-                  (docsifyConfig.vueComponents || {}) ||
+                  (CMDConfig.vueComponents || {}) ||
                 // has a component(s)
                 elm.querySelector(vueComponentNames.join(',') || null) ||
                 // has curly braces
@@ -218,7 +218,7 @@ export function Render(Base) {
 
               // Register global vueComponents
               vueComponentNames.forEach(name => {
-                const config = docsifyConfig.vueComponents[name];
+                const config = CMDConfig.vueComponents[name];
 
                 app.component(name, config);
               });
@@ -439,7 +439,7 @@ export function Render(Base) {
       // Init markdown compiler
       this.compiler = new Compiler(config, this.router);
       if (inBrowser) {
-        window.__current_docsify_compiler__ = this.compiler;
+        window.__current_CMD_compiler__ = this.compiler;
       }
 
       const id = config.el || '#app';

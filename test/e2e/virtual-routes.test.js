@@ -1,5 +1,5 @@
-import docsifyInit from '../helpers/docsify-init.js';
-import { test, expect } from './fixtures/docsify-init-fixture.js';
+import CMDInit from '../helpers/CMD-init.js';
+import { test, expect } from './fixtures/CMD-init-fixture.js';
 
 /**
  * Navigate to a specific route in the site
@@ -18,7 +18,7 @@ test.describe('Virtual Routes - Generate Dynamic Content via Config', () => {
         '/my-awesome-route': '# My Awesome Route',
       };
 
-      await docsifyInit({
+      await CMDInit({
         config: {
           routes,
         },
@@ -39,7 +39,7 @@ test.describe('Virtual Routes - Generate Dynamic Content via Config', () => {
         },
       };
 
-      await docsifyInit({
+      await CMDInit({
         config: {
           routes,
         },
@@ -64,7 +64,7 @@ test.describe('Virtual Routes - Generate Dynamic Content via Config', () => {
         },
       };
 
-      await docsifyInit({
+      await CMDInit({
         config: {
           routes,
         },
@@ -83,7 +83,7 @@ test.describe('Virtual Routes - Generate Dynamic Content via Config', () => {
         '/items/(.*)': '# Item Page',
       };
 
-      await docsifyInit({
+      await CMDInit({
         config: {
           routes,
         },
@@ -102,7 +102,7 @@ test.describe('Virtual Routes - Generate Dynamic Content via Config', () => {
         '/pets/(.*)': route => '# Route: /pets/dog',
       };
 
-      await docsifyInit({
+      await CMDInit({
         config: {
           routes,
         },
@@ -123,7 +123,7 @@ test.describe('Virtual Routes - Generate Dynamic Content via Config', () => {
         },
       };
 
-      await docsifyInit({
+      await CMDInit({
         config: {
           routes,
         },
@@ -146,7 +146,7 @@ test.describe('Virtual Routes - Generate Dynamic Content via Config', () => {
         '/my/route': '# Correct Route',
       };
 
-      await docsifyInit({
+      await CMDInit({
         config: {
           routes,
         },
@@ -166,7 +166,7 @@ test.describe('Virtual Routes - Generate Dynamic Content via Config', () => {
         '/multiple/(.*)': '# Second Match',
       };
 
-      await docsifyInit({
+      await CMDInit({
         config: {
           routes,
         },
@@ -185,7 +185,7 @@ test.describe('Virtual Routes - Generate Dynamic Content via Config', () => {
         '/': '# Virtual Homepage',
       };
 
-      await docsifyInit({
+      await CMDInit({
         markdown: {
           homepage: '# Real File Homepage',
         },
@@ -207,7 +207,7 @@ test.describe('Virtual Routes - Generate Dynamic Content via Config', () => {
         '/c': '# C',
       };
 
-      await docsifyInit({
+      await CMDInit({
         markdown: {
           homepage: '# Real File Homepage',
         },
@@ -232,7 +232,7 @@ test.describe('Virtual Routes - Generate Dynamic Content via Config', () => {
         '/multiple/.*': () => '# Last Match',
       };
 
-      await docsifyInit({
+      await CMDInit({
         config: {
           routes,
         },
@@ -252,7 +252,7 @@ test.describe('Virtual Routes - Generate Dynamic Content via Config', () => {
         '/multiple/(.*)': () => "# You Shouldn't See Me",
       };
 
-      await docsifyInit({
+      await CMDInit({
         config: {
           routes,
         },
@@ -276,7 +276,7 @@ test.describe('Virtual Routes - Generate Dynamic Content via Config', () => {
         '/multiple/.*': '# Last Match',
       };
 
-      await docsifyInit({
+      await CMDInit({
         config: {
           routes,
         },

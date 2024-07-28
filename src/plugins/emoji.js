@@ -3,7 +3,7 @@ import emojiData from '../core/render/emoji-data.js';
 // Deprecation notice
 if (window && window.console) {
   // eslint-disable-next-line no-console
-  console.info('Docsify emoji plugin has been deprecated as of v4.13');
+  console.info('CMD emoji plugin has been deprecated as of v4.13');
 }
 
 // Emoji from GitHub API

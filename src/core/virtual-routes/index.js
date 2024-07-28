@@ -1,19 +1,19 @@
 import { makeExactMatcher } from './exact-match.js';
 import { createNextFunction } from './next.js';
 
-/** @typedef {import('../Docsify.js').Constructor} Constructor */
+/** @typedef {import('../CMD.js').Constructor} Constructor */
 
 /** @typedef {Record<string, string | VirtualRouteHandler>} VirtualRoutesMap */
 /** @typedef {(route: string, match: RegExpMatchArray | null) => string | void | Promise<string | void> } VirtualRouteHandler */
 
 /**
- * Allows users/plugins to introduce dynamically created content into their docsify
- * websites. https://github.com/docsifyjs/docsify/issues/1737
+ * Allows users/plugins to introduce dynamically created content into their CMD
+ * websites. 
  *
  * For instance:
  *
  * ```js
- * window.$docsify = {
+ * window.$CMD = {
  *   routes: {
  *     '/items/(.+)': function (route, matched) {
  *       return `

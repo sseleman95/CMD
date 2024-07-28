@@ -1,24 +1,24 @@
 import { jest } from '@jest/globals';
-import docsifyInit from '../helpers/docsify-init.js';
+import CMDInit from '../helpers/CMD-init.js';
 
 // Suite
 // -----------------------------------------------------------------------------
-describe('Docsify', function () {
+describe('CMD', function () {
   // Tests
   // ---------------------------------------------------------------------------
-  test('allows $docsify configuration to be a function', async () => {
+  test('allows $CMD configuration to be a function', async () => {
     const testConfig = jest.fn(vm => {
       expect(vm).toBeInstanceOf(Object);
-      expect(vm.constructor.name).toBe('Docsify');
+      expect(vm.constructor.name).toBe('CMD');
       expect(vm.$fetch).toBeInstanceOf(Function);
       expect(vm.route).toBeInstanceOf(Object);
     });
 
-    await docsifyInit({
+    await CMDInit({
       config: testConfig,
     });
 
-    expect(typeof Docsify).toBe('object');
+    expect(typeof CMD).toBe('object');
     expect(testConfig).toHaveBeenCalled();
   });
 
@@ -42,11 +42,11 @@ describe('Docsify', function () {
       };
     });
 
-    await docsifyInit({
+    await CMDInit({
       config: testConfig,
     });
 
-    expect(typeof Docsify).toBe('object');
+    expect(typeof CMD).toBe('object');
     expect(testConfig).toHaveBeenCalled();
   });
 });

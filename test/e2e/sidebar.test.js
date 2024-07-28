@@ -1,5 +1,5 @@
-import docsifyInit from '../helpers/docsify-init.js';
-import { test, expect } from './fixtures/docsify-init-fixture.js';
+import CMDInit from '../helpers/CMD-init.js';
+import { test, expect } from './fixtures/CMD-init-fixture.js';
 
 // Suite
 // -----------------------------------------------------------------------------
@@ -7,7 +7,7 @@ test.describe('Sidebar Tests', () => {
   // Tests
   // ---------------------------------------------------------------------------
   test('Active Test', async ({ page }) => {
-    const docsifyInitConfig = {
+    const CMDInitConfig = {
       markdown: {
         sidebar: `
           - [Test Space](test%20space)
@@ -42,7 +42,7 @@ test.describe('Sidebar Tests', () => {
 
     const activeLinkElm = page.locator('.sidebar-nav li[class=active]');
 
-    await docsifyInit(docsifyInitConfig);
+    await CMDInit(CMDInitConfig);
 
     await page.click('a[href="#/test"]');
     await expect(activeLinkElm).toHaveText('Test');
