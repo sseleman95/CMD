@@ -7,10 +7,6 @@
   - [Custom navbar](custom-navbar.md)
   - [Cover page](cover.md)
 
-- Customization
-
-  - [Configuration](configuration.md)
-
 - Guide
 
   - [Deploy](es/deploy.md)
