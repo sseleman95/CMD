@@ -1,3 +1,3 @@
 - Language
-  - [:uk: English](/)
+  - [:en: English](/)
   - [:es: Español](/es/)
