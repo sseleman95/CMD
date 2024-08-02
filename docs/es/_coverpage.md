@@ -11,5 +11,5 @@
 
 <!-- background color -->
 
-![color](#f0f0f0)
+![color](#3f3f3f)
 
