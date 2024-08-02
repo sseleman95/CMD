@@ -42,6 +42,7 @@
       loadSidebar: true,
       loadNavbar: true,
       mergeNavbar: true,
+      ext: '.md',
       alias: {
         '/.*/_coverpage.md': '/_coverpage.md',
         '/es/_coverpage.md': '/es/_coverpage.md',
@@ -55,6 +56,8 @@
       maxLevel: 4,
       subMaxLevel: 3,
       name: 'CMD',
+      coverpage: ['/', '/es/'],
+      fallbackLanguages: ['/', 'es'],
       search: {
         noData: {
           '/': '¡No hay resultados!',
