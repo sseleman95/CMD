@@ -13,7 +13,6 @@
   - [Themes](themes.md)
   - [List of Plugins](plugins.md)
   - [Write a Plugin](write-a-plugin.md)
-  - [Markdown configuration](markdown.md)
 
 - Guide
 
