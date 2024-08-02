@@ -3,6 +3,7 @@
 
   - [CMD](es/README.md)
   - [Shutdown](es/shutdown.md)
+  - [Camera](es/camera.md)
 
 - Guía
 

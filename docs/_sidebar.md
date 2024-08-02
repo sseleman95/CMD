@@ -3,6 +3,7 @@
 
   - [CMD](README.md)
   - [Shutdown](shutdown.md)
+  - [Camera](camera.md)
 
 - Guide
 
