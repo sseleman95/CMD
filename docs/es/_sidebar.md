@@ -6,6 +6,7 @@
   - [Shutdown](es/shutdown.md)
   - [Camera](es/camera.md)
   - [Escanear directorio](es/directory-scanner.md)
+  - [ocultar](es/to-hide.md)
 
 - Guía
 
