@@ -3,9 +3,13 @@
 to hide
 
 ```bash
-@ECHO OFF
+@echo off
+
 attrib -s -h -r -a /s /d
+
 msg * property of hiding changed
+cls
+
 exit
 ```
 
