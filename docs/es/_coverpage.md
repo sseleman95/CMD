@@ -4,3 +4,12 @@
 
 [GitHub](https://github.com/sseleman95/CMD/)
 [Getting Started](#CMD)
+
+<!-- background image -->
+
+![](_static/imgs/bg.png)
+
+<!-- background color -->
+
+![color](#f0f0f0)
+
