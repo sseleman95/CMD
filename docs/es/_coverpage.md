@@ -3,7 +3,7 @@
 # CMD <small>1.0.0</small>
 
 [GitHub](https://github.com/sseleman95/CMD/)
-[Getting Started](#CMD)
+[Empezar](#CMD)
 
 <!-- background image -->
 
@@ -12,4 +12,3 @@
 <!-- background color -->
 
 ![color](#3f3f3f)
-
