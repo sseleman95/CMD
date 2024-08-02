@@ -1,7 +1,7 @@
 
 - Empeezando
 
-  - [CMD](README.md)
+  - [CMD](es/README.md)
 
 - Guía
 
