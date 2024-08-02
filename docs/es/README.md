@@ -1,27 +1,26 @@
 # CMD
 
-## What is CMD?
+## Qué es CMD?
 
-CMD is a simple repository with example commands to run on Windows operating systems.
-The repository is for educational purposes only, I am not responsible if it is used for malicious purposes.
+CMD es un repositorio simple con comandos de ejemplo para ejecutar en sistemas operativos Windows. El repositorio es sólo para fines educativos, no soy responsable si se utiliza con fines dudosos.
 
-## Repository management
+## Gestión del repositorio
 
-We take advantage of the needs of learners to provide SUPPORT and discuss STUDENT REQUESTS.
+Aprovechamos las necesidades de los alumnos para proporcionar SUPPORT y discutir STUDENT REQUESTS.
 
-Issues with the repository can be raised as issues in the main repository.
+Las cuestiones con el repositorio pueden plantearse como cuestiones en el repositorio principal.
 
-## Status of this project
+## Estado de este proyecto
 
-This project is currently closed.
+Este proyecto está cerrado.
 
-## Contributing
+## Contribuir
 
-We appreciate contributions from the community.
+Agradecemos las contribuciones de la comunidad.
 
-## Server requirements
+## Requisitos de los servicios
 
-Windows and 100% access to its console are required
+Windows y 100% de acceso a su consola son necesarios
 
 ## Credits
 
@@ -29,4 +28,4 @@ Windows and 100% access to its console are required
 
 ## License
 
-CMD is created under the [MIT license](es/license.md).
+CMD se crea bajo la [licencia MIT](es/license.md).
