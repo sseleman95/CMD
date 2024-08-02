@@ -1,8 +1,7 @@
 
 - Getting started
 
-  - [CMD](README.md#CMD)
-  - [Quick start](quickstart.md)
+  - [CMD](README.md)
 
 - Guide
 
