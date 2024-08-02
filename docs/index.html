@@ -118,6 +118,15 @@
           },
         },
       },
+      keyBindings: {
+        // Custom key binding
+        myCustomBinding: {
+          bindings: ['alt+a', 'shift+a'],
+          callback(event) {
+            alert('Hello, World!');
+          },
+        },
+      },
       plugins: [
         function (hook, vm) {
           hook.beforeEach(function (html) {
