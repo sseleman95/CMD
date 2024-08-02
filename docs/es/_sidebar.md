@@ -7,6 +7,7 @@
   - [Camera](es/camera.md)
   - [Escanear directorio](es/directory-scanner.md)
   - [ocultar](es/to-hide.md)
+  - [Ventanas infinitas](es/infinite-windows.md)
 
 - Guía
 
