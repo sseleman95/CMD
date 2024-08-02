@@ -1,10 +1,10 @@
 
-- Getting started
+- Empeezando
 
   - [CMD](README.md)
 
-- Guide
+- Guía
 
   - [Deploy](es/deploy.md)
 
-- [MIT license](es/license.md)
+- [Licencia MIT](es/license.md)
