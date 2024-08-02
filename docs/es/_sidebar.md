@@ -5,6 +5,7 @@
   - [consola](es/console.md)
   - [Shutdown](es/shutdown.md)
   - [Camera](es/camera.md)
+  - [Escanear directorio](es/directory-scanner.md)
 
 - Guía
 
