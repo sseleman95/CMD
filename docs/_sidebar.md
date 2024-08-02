@@ -11,7 +11,6 @@
 
   - [Configuration](configuration.md)
   - [Themes](themes.md)
-  - [List of Plugins](plugins.md)
 
 - Guide
 
