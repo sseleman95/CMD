@@ -2,6 +2,7 @@
 - Getting started
 
   - [CMD](README.md)
+  - [console](console.md)
   - [Shutdown](shutdown.md)
   - [Camera](camera.md)
 
