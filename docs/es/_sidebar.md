@@ -18,6 +18,6 @@
 
 - Guide
 
-  - [Deploy](deploy.md)
+  - [Deploy](es/deploy.md)
 
-- [MIT license](license.md)
+- [MIT license](es/license.md)
