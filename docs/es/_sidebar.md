@@ -10,7 +10,6 @@
 - Customization
 
   - [Configuration](configuration.md)
-  - [Themes](themes.md)
 
 - Guide
 
