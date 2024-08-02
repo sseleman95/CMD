@@ -2,6 +2,7 @@
 - Empeezando
 
   - [CMD](es/README.md)
+  - [shutdown](es/shutdown.md)
 
 - Guía
 
