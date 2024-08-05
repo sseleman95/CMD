@@ -6,8 +6,8 @@
   - [Shutdown](shutdown.md)
   - [Camera](camera.md)
   - [Directory scanner](directory-scanner.md)
-  - [To hide](es/to-hide.md)
-  - [Infinite windows](es/infinite-windows.md)
+  - [To hide](to-hide.md)
+  - [Infinite windows](infinite-windows.md)
 
 - Guide
 
