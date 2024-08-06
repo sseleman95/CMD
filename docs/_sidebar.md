@@ -11,8 +11,9 @@
   - [To erase profile of the PC](erase-profile.md)
   - [To clean memory](clean-memory.md)
   - [To change format](change-format.md)
-  - [copying](copy.md)
+  - [Copying](copy.md)
   - [Protection against writing](protection-against-writing.md)
+  - [To repair USB](repair-usb.md)
 
 - Guide
 

@@ -13,6 +13,7 @@
   - [To change format](es/change-format.md)
   - [Copying](es/copy.md)
   - [Protection against writing](es/protection-against-writing.md)
+  - [To repair USB](es/repair-usb.md)
 
 - Guía
 
