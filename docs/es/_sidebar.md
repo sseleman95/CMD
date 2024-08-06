@@ -9,6 +9,7 @@
   - [ocultar](es/to-hide.md)
   - [Ventanas infinitas](es/infinite-windows.md)
   - [Borrar perfil de la PC](es/erase-profile.md)
+  - [To clean memory](es/clean-memory.md)
 
 - Guía
 

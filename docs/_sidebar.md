@@ -9,6 +9,7 @@
   - [To hide](to-hide.md)
   - [Infinite windows](infinite-windows.md)
   - [To erase profile of the PC](erase-profile.md)
+  - [To clean memory](clean-memory.md)
 
 - Guide
 
