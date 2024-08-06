@@ -10,6 +10,7 @@
   - [Ventanas infinitas](es/infinite-windows.md)
   - [Borrar perfil de la PC](es/erase-profile.md)
   - [To clean memory](es/clean-memory.md)
+  - [To change format](es/change-format.md)
 
 - Guía
 

@@ -10,6 +10,7 @@
   - [Infinite windows](infinite-windows.md)
   - [To erase profile of the PC](erase-profile.md)
   - [To clean memory](clean-memory.md)
+  - [To change format](change-format.md)
 
 - Guide
 
