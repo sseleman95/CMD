@@ -12,6 +12,7 @@
   - [To clean memory](clean-memory.md)
   - [To change format](change-format.md)
   - [copying](copy.md)
+  - [Protection against writing](protection-against-writing.md)
 
 - Guide
 

@@ -11,7 +11,8 @@
   - [Borrar perfil de la PC](es/erase-profile.md)
   - [To clean memory](es/clean-memory.md)
   - [To change format](es/change-format.md)
-  - [copying](es/copy.md)
+  - [Copying](es/copy.md)
+  - [Protection against writing](es/protection-against-writing.md)
 
 - Guía
 
