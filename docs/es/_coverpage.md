@@ -7,7 +7,7 @@
 
 <!-- background image -->
 
-![](_static/imgs/bg.png)
+![](../_static/imgs/dg.webp)
 
 <!-- background color -->
 
