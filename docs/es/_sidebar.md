@@ -2,11 +2,11 @@
 - Empeezando
 
   - [CMD](es/README.md)
-  - [consola](es/console.md)
+  - [Consola](es/console.md)
   - [Shutdown](es/shutdown.md)
-  - [Camera](es/camera.md)
+  - [Cámara](es/camera.md)
   - [Escanear directorio](es/directory-scanner.md)
-  - [ocultar](es/to-hide.md)
+  - [Ocultar](es/hide.md)
   - [Ventanas infinitas](es/infinite-windows.md)
   - [Borrar perfil de la PC](es/erase-profile.md)
   - [To clean memory](es/clean-memory.md)
