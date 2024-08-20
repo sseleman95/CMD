@@ -12,7 +12,7 @@
   - [Limpiar la Memoria](es/clean-memory.md)
   - [Cambiar Formato](es/change-format.md)
   - [Copiador](es/copier.md)
-  - [Protection against writing](es/protection-against-writing.md)
+  - [Protección Contra Escritura](es/write-protection.md)
   - [To repair USB](es/repair-usb.md)
 
 - Guía

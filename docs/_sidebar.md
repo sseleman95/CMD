@@ -12,7 +12,7 @@
   - [Clear Memory](clean-memory.md)
   - [Change Format](change-format.md)
   - [Copier](copier.md)
-  - [Protection against writing](protection-against-writing.md)
+  - [Write Protection](write-protection.md)
   - [To repair USB](repair-usb.md)
 
 - Guide
