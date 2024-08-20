@@ -1,5 +1,5 @@
 
-- Empeezando
+- Empezando
 
   - [CMD](es/README.md)
   - [Consola](es/console.md)
@@ -13,7 +13,7 @@
   - [Cambiar Formato](es/change-format.md)
   - [Copiador](es/copier.md)
   - [Protección Contra Escritura](es/write-protection.md)
-  - [To repair USB](es/repair-usb.md)
+  - [Reparar USB](es/repair-usb.md)
 
 - Guía
 

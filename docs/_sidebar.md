@@ -13,7 +13,7 @@
   - [Change Format](change-format.md)
   - [Copier](copier.md)
   - [Write Protection](write-protection.md)
-  - [To repair USB](repair-usb.md)
+  - [Repair USB](repair-usb.md)
 
 - Guide
 
