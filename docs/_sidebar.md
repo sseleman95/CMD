@@ -11,7 +11,7 @@
   - [Delete Profile from PC](deleted-profile.md)
   - [Clear Memory](clean-memory.md)
   - [Change Format](change-format.md)
-  - [Copying](copy.md)
+  - [Copier](copier.md)
   - [Protection against writing](protection-against-writing.md)
   - [To repair USB](repair-usb.md)
 

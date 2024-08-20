@@ -9,9 +9,9 @@
   - [Ocultar](es/hide.md)
   - [Ventanas Infinitas](es/infinite-windows.md)
   - [Borrar Perfil de la PC](es/deleted-profile.md)
-  - [Clear Memory](es/clean-memory.md)
+  - [Limpiar la Memoria](es/clean-memory.md)
   - [Cambiar Formato](es/change-format.md)
-  - [Copying](es/copy.md)
+  - [Copiador](es/copier.md)
   - [Protection against writing](es/protection-against-writing.md)
   - [To repair USB](es/repair-usb.md)
 
