@@ -1,4 +1,4 @@
-# Camera
+# Cámara
 
 La cámara, sobre todo en los portátiles, es clave si somos fanáticos de las redes sociales o si por algún motivo necesitamos acceder a reuniones a través de alguna de las plataformas que existen hoy en día para ello, la cámara en Windows se puede configurar al acceder como vídeo o solo fotos, así como ajustar variables adicionales con la resolución y demás, veremos cómo abrir la cámara en Windows 10 desde varios métodos disponibles.
 
