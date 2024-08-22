@@ -6,7 +6,7 @@
   - [Shutdown](shutdown.md)
   - [Camera](camera.md)
   - [Scan Directory](scan-directory.md)
-  - [Hide](hide.md)
+  - [Edit File Attributes](attributes.md)
   - [Infinite Windows](infinite-windows.md)
   - [Delete Profile from PC](deleted-profile.md)
   - [Clear Memory](clean-memory.md)

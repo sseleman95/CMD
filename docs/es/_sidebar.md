@@ -6,7 +6,7 @@
   - [Shutdown](es/shutdown.md)
   - [Cámara](es/camera.md)
   - [Escanear Directorio](es/scan-directory.md)
-  - [Ocultar](es/hide.md)
+  - [Editar Atributos de Archivo](es/attributes.md)
   - [Ventanas Infinitas](es/infinite-windows.md)
   - [Borrar Perfil de la PC](es/deleted-profile.md)
   - [Limpiar la Memoria](es/clean-memory.md)
