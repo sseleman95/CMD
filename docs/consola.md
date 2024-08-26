@@ -15,3 +15,9 @@ Access to the Windows command line is offered in two different modes, user and a
 * If you use the Windows console frequently you can include a shortcut in the taskbar. It couldn't be more direct.
 * We can also access the console from the file explorer since the cmd.exe application is hosted in the path C:\Windows\System32.
 * Finally, another very simple method of access from Windows 8.1 and Windows 10 is to use the user menu accessible with the Windows + X key combination or by right-clicking on the start button.
+
+## Enlaces relacionados
+
+[Microsoft Windows 10](https://www.youtube.com/playlist?list=PLSYb3e_3vNgMDbQca5TK0WuD3kVDXKQna)  
+[Windows CMD: Editar atributos de archivo (Attrib).](https://www.pantallazos.es/2018/06/windows-cmd-editar-atributos-archivo-attrib.html)  
+[Microsoft Windows CMD: TREE listar Árbol de directorios.](https://www.pantallazos.es/2018/06/microsoft-windows-cmd-tree-listar-arbol-directorios.html)  

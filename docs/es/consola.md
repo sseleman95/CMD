@@ -15,3 +15,8 @@ El acceso a la línea de comandos de Windows se ofrece en dos modos diferentes, 
 * Si utilizas la consola de Windows con frecuencia puedes incluir un acceso directo en la barra de tareas. No puede ser más directo.
 * También podemos acceder a la consola desde el explorador de archivos ya que la aplicación cmd.exe se encuentra alojada en la ruta C:\Windows\System32.
 * Por último, otro método muy sencillo de acceso desde Windows 8.1 y Windows 10 es utilizar el menú de usuario accesible con la combinación de teclas Windows + X o haciendo clic derecho sobre el botón de inicio.
+
+## Enlaces relacionados
+[Microsoft Windows 10](https://www.youtube.com/playlist?list=PLSYb3e_3vNgMDbQca5TK0WuD3kVDXKQna)  
+[Windows CMD: Editar atributos de archivo (Attrib).](https://www.pantallazos.es/2018/06/windows-cmd-editar-atributos-archivo-attrib.html)  
+[Microsoft Windows CMD: TREE listar Árbol de directorios. ](https://www.pantallazos.es/2018/06/microsoft-windows-cmd-tree-listar-arbol-directorios.html)  
