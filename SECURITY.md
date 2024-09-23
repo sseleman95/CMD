@@ -1,6 +1,6 @@
 # Security Policy
 
-If you believe you have found a security vulnerability in CMD, please report it to us asap.
+If you believe you have found a security vulnerability in *CMD*, please report it to us asap.
 The development team and community take all security issues seriously. **Please do not make public any uncovered flaws.**
 
 ## Supported Versions
@@ -28,9 +28,6 @@ Include as much of the following information as possible to help us better under
 - Impact of the issue, including how an attacker might exploit the issue
 
 This information will help us triage your report more quickly.
-
-
-
 
 The lead maintainer will acknowledge your email within 48 hours, and will send a more detailed response within 48 hours indicating
 the next steps in handling your report. After the initial reply to your report, the security team will endeavor to keep you informed of the
